@@ -24,7 +24,11 @@ function App({ Component, pageProps }: AppPropsWithLayout) {
 				setGuild({
 					id: 1,
 					name: "Clay's Support",
-					iconURL: "img"
+					iconURL: "https://avatarfiles.alphacoders.com/105/105223.jpg",
+					stats: {
+						memberCount: 15,
+						onlineMemberCount: 5
+					}
 				})
 			);
 
@@ -32,8 +36,12 @@ function App({ Component, pageProps }: AppPropsWithLayout) {
 			dispatch(
 				setGuild({
 					id: 2,
-					name: "Clay's Community <jahdjk<hk>",
-					iconURL: "img"
+					name: "Clay's Community",
+					iconURL: "https://avatarfiles.alphacoders.com/105/105223.jpg",
+					stats: {
+						memberCount: 30,
+						onlineMemberCount: 20
+					}
 				})
 			);
 		}, 2000);
@@ -51,7 +59,7 @@ function App({ Component, pageProps }: AppPropsWithLayout) {
 			{/* todo: nested modals or something like that */}
 			<AlphaVersionModal />
 
-			<div className="w-full h-full bg-gray-800 text-white">
+			<div className="relative w-full h-full bg-gray-800 text-white">
 				{getLayout(<Component {...pageProps} />)}
 			</div>
 		</>

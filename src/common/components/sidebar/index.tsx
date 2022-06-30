@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import { FC } from "react";
 import { classNames } from "../../../utils";
 import { getIcon } from "../../../utils/icons";
+import GuildCard from "./guild-card";
 
 type SidebarProps = {};
 
@@ -16,7 +17,17 @@ const navigationWithCategories = [
 				icon: getIcon("dashboard")
 			},
 			{
-				name: "Guild Settings",
+				name: "Statistics",
+				href: "/guild/stats",
+				icon: getIcon("chartPie"),
+				badge: (
+					<span className="inline-flex justify-center items-center px-2 ml-3 text-sm font-medium text-gray-800 bg-gray-200 rounded-full dark:bg-gray-600 dark:text-gray-300">
+						Pro
+					</span>
+				)
+			},
+			{
+				name: "Settings",
 				href: "/guild/settings",
 				icon: getIcon("settings")
 			}
@@ -26,12 +37,12 @@ const navigationWithCategories = [
 		category: "Moderation",
 		items: [
 			{
-				name: "Bans",
+				name: "User Bans",
 				href: "/bans",
-				icon: getIcon("dashboard")
+				icon: getIcon("userLeave")
 			},
 			{
-				name: "Timeouts",
+				name: "User Timeouts",
 				href: "/timeouts",
 				icon: getIcon("settings")
 			}
@@ -43,10 +54,10 @@ const Sidebar: FC<SidebarProps> = () => {
 	const router = useRouter();
 
 	return (
-		<aside className="flex flex-col flex-shrink-0 w-60 px-4 py-6 bg-white border-r dark:bg-gray-800 dark:border-gray-700">
-			<div className="h-full flex flex-col justify-between">
+		<aside className="flex flex-col flex-shrink-0 w-64 px-4 py-6 bg-white border-r dark:bg-gray-800 dark:border-gray-700">
+			<div className="cursor-default h-full flex flex-col justify-between">
 				<div>
-					<div className="mb-4">guild details</div>
+					<GuildCard />
 
 					<nav className="space-y-4 overflow-auto">
 						{navigationWithCategories.map((c) => (
@@ -62,16 +73,19 @@ const Sidebar: FC<SidebarProps> = () => {
 													router.asPath === item.href
 														? "text-gray-700 bg-gray-200 dark:bg-gray-700 dark:text-gray-200"
 														: "dark:text-gray-400 focus:hover:bg-gray-200 dark:hover:bg-gray-700 dark:hover:text-gray-200 hover:text-gray-700",
-													"flex items-center px-4 py-2 rounded-md transition-colors duration-200"
+													"flex justify-between items-center px-4 py-2 rounded-full transition-colors"
 												)}
 												aria-current={
 													router.asPath === item.href ? "page" : undefined
 												}
 											>
-												{item.icon}
-												<span className="mx-4 font-medium">
-													{item.name}
-												</span>
+												<div className="flex items-center">
+													{item.icon}
+													<span className="mx-4 font-medium">
+														{item.name}
+													</span>
+												</div>
+												{item.badge}
 											</a>
 										</Link>
 									))}

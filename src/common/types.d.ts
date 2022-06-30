@@ -9,6 +9,12 @@ export interface PartialGuild {
 	id: number;
 	name: string;
 	iconURL: string | null;
+	stats: PartialGuildStats;
+}
+
+export interface PartialGuildStats {
+	memberCount: number;
+	onlineMemberCount: number;
 }
 
 export interface PartialUser {
