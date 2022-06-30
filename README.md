@@ -1,7 +1,7 @@
 ## About
 
 An open source discord bot dashboard.
-Currently in alpha version.
+**Currently in alpha version.**
 
 ## Collabrate
 
