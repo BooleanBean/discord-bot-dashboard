@@ -10,6 +10,7 @@ Feel free to collaborate the project :)
 ## Preview
 
 ![Clay's Dashboard](docs/assets/dashboard-preview.png)
+[Visit Preview](https://clays-dashboard.netlify.app/)
 
 ## Getting Started
 
