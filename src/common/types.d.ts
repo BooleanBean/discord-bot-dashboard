@@ -1,15 +1,23 @@
+import type { APIPartialGuild, APIUser, Snowflake } from "discord-api-types/v9";
 import type { NextPage } from "next";
 import type { ReactElement } from "react";
 
-export type NextPageWithLayout = NextPage & {
+export type NextPageWithLayout<I = {}> = NextPage<I> & {
 	getLayout?: (page: ReactElement) => ReactNode;
 };
 
-export interface PartialGuild {
-	id: number;
-	name: string;
-	iconURL: string | null;
-	stats: PartialGuildStats;
+export interface APIResponse<D = any> {
+	isError: any | null;
+	isLoading: boolean;
+	data: D | undefined;
+}
+
+interface Session {
+	id: Snowflake;
+}
+
+export interface PartialGuild extends APIPartialGuild {
+	stats: PartialGuildStats | null;
 }
 
 export interface PartialGuildStats {
@@ -17,11 +25,8 @@ export interface PartialGuildStats {
 	onlineMemberCount: number;
 }
 
-export interface PartialUser {
-	id: number;
-	name: string;
-	discriminator: number;
-	avatarURL: string | null;
+export interface PartialUser extends APIUser {
+	guilds: PartialGuild[];
 }
 
 export interface NavigationWithCategories {

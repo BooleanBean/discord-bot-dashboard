@@ -37,13 +37,18 @@ const navigationWithCategories = [
 		category: "Moderation",
 		items: [
 			{
-				name: "User Bans",
-				href: "/bans",
+				name: "Bans",
+				href: "/guild/bans",
 				icon: getIcon("userLeave")
 			},
 			{
-				name: "User Timeouts",
-				href: "/timeouts",
+				name: "Timeouts",
+				href: "/guild/timeouts",
+				icon: getIcon("settings")
+			},
+			{
+				name: "Audit Log",
+				href: "/guild/audit-log",
 				icon: getIcon("settings")
 			}
 		]
@@ -54,12 +59,12 @@ const Sidebar: FC<SidebarProps> = () => {
 	const router = useRouter();
 
 	return (
-		<aside className="flex flex-col flex-shrink-0 w-64 px-4 py-6 bg-white border-r dark:bg-gray-800 dark:border-gray-700">
-			<div className="cursor-default h-full flex flex-col justify-between">
-				<div>
+		<aside className="flex-shrink-0 w-64 border-r bg-gray-800 border-gray-700">
+			<div className="p-6 cursor-default h-full w-full flex flex-col justify-between">
+				<div className="h-full overflow-auto">
 					<GuildCard />
 
-					<nav className="space-y-4 overflow-auto">
+					<nav className="space-y-4">
 						{navigationWithCategories.map((c) => (
 							<div key={c.category}>
 								<h5 className="mb-2 text-xs text-gray-500 font-bold uppercase">
@@ -73,7 +78,7 @@ const Sidebar: FC<SidebarProps> = () => {
 													router.asPath === item.href
 														? "text-gray-700 bg-gray-200 dark:bg-gray-700 dark:text-gray-200"
 														: "dark:text-gray-400 focus:hover:bg-gray-200 dark:hover:bg-gray-700 dark:hover:text-gray-200 hover:text-gray-700",
-													"flex justify-between items-center px-4 py-2 rounded-full transition-colors"
+													"relative w-full whitespace-nowrap flex justify-between items-center px-4 py-2 rounded-full transition-colors ease-out"
 												)}
 												aria-current={
 													router.asPath === item.href ? "page" : undefined
@@ -85,7 +90,9 @@ const Sidebar: FC<SidebarProps> = () => {
 														{item.name}
 													</span>
 												</div>
-												{item.badge}
+												<span className="absolute right-2">
+													{item.badge}
+												</span>
 											</a>
 										</Link>
 									))}
@@ -94,7 +101,7 @@ const Sidebar: FC<SidebarProps> = () => {
 						))}
 					</nav>
 				</div>
-				<div className="relative -mx-1 group">guild switcher</div>
+				<div>guild switcher</div>
 			</div>
 		</aside>
 	);

@@ -17,7 +17,6 @@ export const siteSlice = createSlice({
 	reducers: {
 		openModal: (state) => {
 			state.isModalOpen = true;
-			console.log("ACCEPTED");
 		},
 		closeModal: (state) => {
 			state.isModalOpen = false;

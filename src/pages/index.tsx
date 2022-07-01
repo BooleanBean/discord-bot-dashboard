@@ -1,11 +1,10 @@
 import Head from "next/head";
 import MainLayout from "../common/layouts/MainLayout";
 import type { NextPageWithLayout } from "../common/types";
-import { useAppSelector } from "../setup/hooks";
 
-const Home: NextPageWithLayout = () => {
-	const guild = useAppSelector((state) => state.guild.data);
+type HomeProps = {};
 
+const Home: NextPageWithLayout<HomeProps> = () => {
 	return (
 		<>
 			<Head>
@@ -13,8 +12,6 @@ const Home: NextPageWithLayout = () => {
 				<meta name="description" content="A bot." />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-
-			<div>{JSON.stringify(guild)}</div>
 		</>
 	);
 };
