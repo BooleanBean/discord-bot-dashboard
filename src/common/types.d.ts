@@ -17,6 +17,7 @@ interface Session {
 }
 
 export interface PartialGuild extends APIPartialGuild {
+	banner: string | null;
 	stats: PartialGuildStats | null;
 }
 

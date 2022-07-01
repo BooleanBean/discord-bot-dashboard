@@ -6,6 +6,6 @@
 @layer base {
 	body,
 	#__next {
-		@apply h-screen w-screen;
+		@apply h-screen w-screen overflow-hidden;
 	}
 }

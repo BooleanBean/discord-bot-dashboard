@@ -1,62 +1,64 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { FC } from "react";
+import { useAppSelector } from "../../../setup/hooks";
 import { classNames } from "../../../utils";
 import { getIcon } from "../../../utils/icons";
 import GuildCard from "./guild-card";
 
 type SidebarProps = {};
 
-const navigationWithCategories = [
-	{
-		category: "General",
-		items: [
-			{
-				name: "Dashboard",
-				href: "/",
-				icon: getIcon("dashboard")
-			},
-			{
-				name: "Statistics",
-				href: "/guild/stats",
-				icon: getIcon("chartPie"),
-				badge: (
-					<span className="inline-flex justify-center items-center px-2 ml-3 text-sm font-medium text-gray-800 bg-gray-200 rounded-full dark:bg-gray-600 dark:text-gray-300">
-						Pro
-					</span>
-				)
-			},
-			{
-				name: "Settings",
-				href: "/guild/settings",
-				icon: getIcon("settings")
-			}
-		]
-	},
-	{
-		category: "Moderation",
-		items: [
-			{
-				name: "Bans",
-				href: "/guild/bans",
-				icon: getIcon("userLeave")
-			},
-			{
-				name: "Timeouts",
-				href: "/guild/timeouts",
-				icon: getIcon("settings")
-			},
-			{
-				name: "Audit Log",
-				href: "/guild/audit-log",
-				icon: getIcon("settings")
-			}
-		]
-	}
-];
-
 const Sidebar: FC<SidebarProps> = () => {
 	const router = useRouter();
+	const guild = useAppSelector((state) => state.guild.data);
+
+	const navigationWithCategories = [
+		{
+			category: "General",
+			items: [
+				{
+					name: "Dashboard",
+					href: "/guilds/" + guild?.id,
+					icon: getIcon("dashboard")
+				},
+				{
+					name: "Statistics",
+					href: "/guilds/" + guild?.id + "/stats",
+					icon: getIcon("chartPie"),
+					badge: (
+						<span className="inline-flex justify-center items-center px-2 ml-3 text-sm font-medium text-gray-800 bg-gray-200 rounded-full dark:bg-gray-600 dark:text-gray-300">
+							Pro
+						</span>
+					)
+				},
+				{
+					name: "Settings",
+					href: "/guilds/" + guild?.id + "/settings",
+					icon: getIcon("settings")
+				}
+			]
+		},
+		{
+			category: "Moderation",
+			items: [
+				{
+					name: "Bans",
+					href: "bans",
+					icon: getIcon("userLeave")
+				},
+				{
+					name: "Timeouts",
+					href: "timeouts",
+					icon: getIcon("settings")
+				},
+				{
+					name: "Audit Log",
+					href: "audit-log",
+					icon: getIcon("settings")
+				}
+			]
+		}
+	];
 
 	return (
 		<aside className="flex-shrink-0 w-64 border-r bg-gray-800 border-gray-700">

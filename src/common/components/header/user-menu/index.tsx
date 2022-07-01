@@ -8,21 +8,20 @@ import { useCurrentUser } from "../../../../utils/api/hooks";
 type UserMenuProps = {};
 
 const UserMenu: FC<UserMenuProps> = () => {
-	const { data, isLoading } = useCurrentUser();
+	const { data: user, isLoading } = useCurrentUser();
 
 	if (isLoading) return <div>loading</div>;
 
-	const getUser = () => {
-		console.log(data);
-
-		return getUserAvatarURL(data?.id!, data?.avatar!) ?? "";
-	};
 	return (
 		<Menu as="div" className="ml-3 relative">
 			<div>
 				<Menu.Button className="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
 					<span className="sr-only">Open user menu</span>
-					<img className="h-8 w-8 rounded-full" src={getUser()} alt={data?.username} />
+					<img
+						className="h-8 w-8 rounded-full"
+						src={getUserAvatarURL(user?.id, user?.avatar)}
+						alt={data?.username}
+					/>
 				</Menu.Button>
 			</div>
 

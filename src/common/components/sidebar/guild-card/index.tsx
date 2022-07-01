@@ -1,21 +1,11 @@
-import { FC, useEffect } from "react";
-import { setGuild } from "../../../../setup/guild-manager";
-import { useAppDispatch, useAppSelector } from "../../../../setup/hooks";
+import { FC } from "react";
+import { useAppSelector } from "../../../../setup/hooks";
 import { getGuildIconURL } from "../../../../utils/api";
-import { useGuilds } from "../../../../utils/api/hooks";
 
 type GuildCardProps = {};
 
 const GuildCard: FC<GuildCardProps> = () => {
 	const guild = useAppSelector((state) => state.guild.data);
-	const dispatch = useAppDispatch();
-	const { data: guilds, isLoading } = useGuilds();
-
-	useEffect(() => {
-		dispatch(setGuild(guilds?.[0] ?? null));
-	}, [isLoading]);
-
-	if (isLoading && !guild) return <div>loading..</div>;
 
 	return (
 		<div className="mb-8 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">

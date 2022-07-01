@@ -13,7 +13,7 @@ const MainLayout: FC<MainLayoutProps> = ({ children }) => {
 
 			<main className="overflow-hidden flex-1 flex h-full">
 				<Sidebar />
-				<div className="w-full h-full">{children}</div>
+				<div className="overflow-y-auto p-6 w-full h-full">{children}</div>
 			</main>
 		</div>
 	);

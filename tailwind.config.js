@@ -14,5 +14,9 @@ module.exports = {
 			}
 		}
 	},
-	plugins: [require("@tailwindcss/forms"), require("flowbite/plugin")]
+	plugins: [
+		require("@tailwindcss/forms"),
+		require("flowbite/plugin"),
+		require("tailwind-gradient-mask-image")
+	]
 };
