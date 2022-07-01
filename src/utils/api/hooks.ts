@@ -2,7 +2,8 @@ import useSWR from "swr";
 import type { APIResponse, PartialGuild, PartialUser } from "../../common/types";
 
 export function useGuilds(): APIResponse<PartialGuild[]> {
-	const fetcher = async () => await (await fetch("http://localhost:3000/api/guilds")).json();
+	// todo: change NEXTAUTH_URL
+	const fetcher = async () => await (await fetch(`${process.env.NEXTAUTH_URL}/api/guilds`)).json();
 
 	const { data: guilds, error } = useSWR(`/api/guilds`, fetcher);
 
@@ -14,7 +15,8 @@ export function useGuilds(): APIResponse<PartialGuild[]> {
 }
 
 export function useCurrentUser(): APIResponse<PartialUser> {
-	const fetcher = async () => await (await fetch("http://localhost:3000/api/users/@me")).json();
+	// todo: change NEXTAUTH_URL
+	const fetcher = async () => await (await fetch(`${process.env.NEXTAUTH_URL}/api/users/@me`)).json();
 
 	const { data: user, error } = useSWR(`/api/users/@me`, fetcher);
 
