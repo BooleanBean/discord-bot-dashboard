@@ -19,7 +19,7 @@ const UserMenu: FC<UserMenuProps> = () => {
 					<span className="sr-only">Open user menu</span>
 					<img
 						className="h-8 w-8 rounded-full"
-						src={getUserAvatarURL(user?.id!, user?.avatar)}
+						src={getUserAvatarURL(user?.id!, user?.avatar as string)}
 						alt={data?.username}
 					/>
 				</Menu.Button>
