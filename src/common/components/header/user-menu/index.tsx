@@ -20,7 +20,7 @@ const UserMenu: FC<UserMenuProps> = () => {
 					<img
 						className="h-8 w-8 rounded-full"
 						src={getUserAvatarURL(user?.id!, user?.avatar as string)}
-						alt={data?.username}
+						alt={user?.username}
 					/>
 				</Menu.Button>
 			</div>
