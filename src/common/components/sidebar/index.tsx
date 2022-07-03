@@ -1,38 +1,31 @@
-import Link from "next/link";
 import { useRouter } from "next/router";
 import { FC } from "react";
-import { classNames } from "../../../utils";
-import { getIcon } from "../../../utils/icons";
+import { NavigationLinksWithCategories } from "../../types";
 import GuildCard from "./guild-card";
+import GuildLink from "./guild-link";
 
 type SidebarProps = {};
 
 const Sidebar: FC<SidebarProps> = () => {
 	const router = useRouter();
-
-	const navigationWithCategories = [
+	const navigationLinksWithCategories: NavigationLinksWithCategories[] = [
 		{
 			category: "General",
 			items: [
 				{
 					name: "Dashboard",
 					href: `/app/guilds/${router.query.guildId}`,
-					icon: getIcon("dashboard")
+					icon: "dashboard"
 				},
 				{
 					name: "Statistics",
 					href: `/app/guilds/${router.query.guildId}/statistics`,
-					icon: getIcon("chartPie"),
-					badge: (
-						<span className="inline-flex justify-center items-center px-2 ml-3 text-sm font-medium text-gray-800 bg-gray-200 rounded-full dark:bg-gray-600 dark:text-gray-300">
-							Pro
-						</span>
-					)
+					icon: "chartPie"
 				},
 				{
 					name: "Settings",
 					href: `/app/guilds/${router.query.guildId}/settings`,
-					icon: getIcon("settings")
+					icon: "settings"
 				}
 			]
 		},
@@ -42,17 +35,17 @@ const Sidebar: FC<SidebarProps> = () => {
 				{
 					name: "Bans",
 					href: "bans",
-					icon: getIcon("userLeave")
+					icon: "userLeave"
 				},
 				{
 					name: "Timeouts",
 					href: "timeouts",
-					icon: getIcon("settings")
+					icon: "settings"
 				},
 				{
 					name: "Audit Log",
 					href: "audit-log",
-					icon: getIcon("settings")
+					icon: "settings"
 				}
 			]
 		}
@@ -65,36 +58,14 @@ const Sidebar: FC<SidebarProps> = () => {
 					<GuildCard />
 
 					<nav className="space-y-4">
-						{navigationWithCategories.map((c) => (
+						{navigationLinksWithCategories.map((c) => (
 							<div key={c.category}>
 								<h5 className="mb-2 text-xs text-gray-500 font-bold uppercase">
 									{c.category}
 								</h5>
-								<div className="space-y-1 ">
-									{c.items.map((item) => (
-										<Link key={item.name} href={item.href} passHref>
-											<a
-												className={classNames(
-													router.asPath === item.href
-														? "text-gray-700 bg-gray-200 dark:bg-gray-700 dark:text-gray-200"
-														: "dark:text-gray-400 focus:hover:bg-gray-200 dark:hover:bg-gray-700 dark:hover:text-gray-200 hover:text-gray-700",
-													"relative w-full whitespace-nowrap flex justify-between items-center px-4 py-2 rounded-full transition-colors ease-out"
-												)}
-												aria-current={
-													router.asPath === item.href ? "page" : undefined
-												}
-											>
-												<div className="flex items-center">
-													{item.icon}
-													<span className="mx-4 font-medium">
-														{item.name}
-													</span>
-												</div>
-												<span className="absolute right-2">
-													{item.badge}
-												</span>
-											</a>
-										</Link>
+								<div>
+									{c.items.map((link) => (
+										<GuildLink key={link.href} link={link} />
 									))}
 								</div>
 							</div>

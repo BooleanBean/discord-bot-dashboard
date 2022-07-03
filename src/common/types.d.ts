@@ -2,6 +2,7 @@ import type { APIPartialGuild, APIUser, Snowflake } from "discord-api-types/v9";
 import type { NextPage } from "next";
 import "next-auth";
 import type { ReactElement } from "react";
+import { Icons } from "../utils/icons";
 
 declare module "next-auth" {
 	interface Session {
@@ -42,13 +43,14 @@ export interface PartialUser extends APIUser {
 	guilds: PartialGuild[];
 }
 
-export interface NavigationWithCategories {
+export interface NavigationLinksWithCategories {
 	category: string;
-	items: NavigationItem[];
+	items: NavigationLink[];
 }
 
-export interface NavigationItem {
+export interface NavigationLink {
 	name: string;
 	href: string;
-	icon: ReactElement;
+	icon: keyof Icons;
+	badge?: ReactElement;
 }
