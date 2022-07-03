@@ -60,12 +60,12 @@ const ProfileDropdownButton: FC<ProfileDropdownButtonProps> = () => {
 
 			<Transition
 				show={openMenu}
-				enter="transition-opacity duration-75"
-				enterFrom="opacity-0"
-				enterTo="opacity-100"
-				leave="transition-opacity duration-150"
-				leaveFrom="opacity-100"
-				leaveTo="opacity-0"
+				enter="transition duration-100 ease-out"
+				enterFrom="transform scale-95 opacity-0"
+				enterTo="transform scale-100 opacity-100"
+				leave="transition duration-75 ease-out"
+				leaveFrom="transform scale-100 opacity-100"
+				leaveTo="transform scale-95 opacity-0"
 			>
 				<div className="shadow-lg absolute right-0 z-20 w-56 py-2 mt-2 overflow-hidden bg-white rounded-md shadow-xl dark:bg-gray-800">
 					<Link href={`/app/users/${data.id}/profile`} passHref>
