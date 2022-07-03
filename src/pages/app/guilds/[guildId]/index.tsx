@@ -1,5 +1,7 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
+import PrimaryButton from "../../../../common/components/buttons/primary";
+import SecondaryButton from "../../../../common/components/buttons/secondary";
 import MainLayout from "../../../../common/layouts/MainLayout";
 import { NextPageWithLayout } from "../../../../common/types";
 
@@ -16,7 +18,10 @@ const Guild: NextPageWithLayout<GuildProps> = () => {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 
-			<div>guild</div>
+			<div>
+				<PrimaryButton>Primary</PrimaryButton>
+				<SecondaryButton>Secondary</SecondaryButton>
+			</div>
 		</>
 	);
 };

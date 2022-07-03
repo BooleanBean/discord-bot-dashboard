@@ -52,7 +52,7 @@ const Sidebar: FC<SidebarProps> = () => {
 	];
 
 	return (
-		<aside className="flex-shrink-0 w-64 border-r bg-gray-800 border-gray-700">
+		<aside className="flex-shrink-0 w-64 border-r bg-gray-900 border-gray-700">
 			<div className="p-6 cursor-default h-full w-full flex flex-col justify-between">
 				<div className="h-full overflow-auto">
 					<GuildCard />
