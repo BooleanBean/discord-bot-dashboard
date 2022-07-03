@@ -9,6 +9,9 @@ export default NextAuth({
 			authorization: { params: { scope: "identify guilds" } }
 		})
 	],
+	theme: {
+		colorScheme: "dark"
+	},
 	callbacks: {
 		async jwt({ token, account }) {
 			if (account) {
