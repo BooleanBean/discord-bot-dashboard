@@ -6,13 +6,13 @@ export default NextAuth({
 		DiscordProvider({
 			clientId: process.env.DISCORD_APP_ID!,
 			clientSecret: process.env.DISCORD_APP_SECRET!,
-			authorization: { params: { scope: "identify guilds email" } }
+			authorization: { params: { scope: "identify guilds" } }
 		})
 	],
 	callbacks: {
 		async jwt({ token, account }) {
 			if (account) {
-				token.accessToken = account.access_token;
+				token.accessToken = account.access_token as string;
 			}
 			return token;
 		},

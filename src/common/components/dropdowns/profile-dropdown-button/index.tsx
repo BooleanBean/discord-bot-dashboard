@@ -10,29 +10,31 @@ type ProfileDropdownButtonProps = {
 };
 
 const ProfileDropdownButton: FC<ProfileDropdownButtonProps> = ({ label, placement }) => {
-	const { data: currentUser, isLoading } = useCurrentUser();
+	const { data, error, loading } = useCurrentUser();
 
-	if (isLoading) return <>loading...</>;
+	if (loading) return <div>loading...</div>;
+	if (!data) return <div>No data</div>;
+	if (error) return <div>An error occured</div>;
 
 	return (
-		<Dropdown placement={placement} label={label ?? currentUser?.username}>
+		<Dropdown placement={placement} label={label ?? data.username}>
 			<Dropdown.Header>
 				<div className="flex items-center mb-2">
 					<Avatar
-						img={getUserAvatarURL(currentUser!.id, currentUser!.avatar)}
+						img={getUserAvatarURL(data.id, data.avatar)}
 						rounded={true}
 						// todo
 						status="online"
 						statusPosition="bottom-right"
 					>
-						<span className="text-gray-300 text-sm">{currentUser?.username}</span>
+						<span className="text-gray-300 text-sm">{data.username}</span>
 						<span className="block text-right text-gray-400 truncate text-sm font-medium">
-							#{currentUser?.discriminator}
+							#{data.discriminator}
 						</span>
 					</Avatar>
 				</div>
 				<span className="block text-gray-400 truncate text-sm font-medium">
-					{currentUser?.email}
+					{data.email}
 				</span>
 			</Dropdown.Header>
 

@@ -1,43 +1,50 @@
-import { Snowflake } from "discord-api-types/globals";
+import { getSession } from "next-auth/react";
 import useSWR from "swr";
+import { getDiscordAPIWithPath } from ".";
 import type { APIResponse, PartialGuild, PartialUser } from "../../common/types";
 
-const apiUri = process.env.NEXT_PUBLIC_API_URL + "/api";
-
 export function useGuilds(): APIResponse<PartialGuild[]> {
-	const fetcher = async () => await (await fetch(apiUri + "/guilds")).json();
+	const fetcher = async () => {
+		const session = await getSession();
 
-	const { data: guilds, error } = useSWR("/api/guilds", fetcher);
-
-	return {
-		data: guilds?.data,
-		isLoading: !error && !guilds?.data,
-		isError: error
+		if (session) {
+			const result = await fetch(getDiscordAPIWithPath("/users/@me/guilds"), {
+				headers: {
+					Authorization: `Bearer ${session.accessToken}`
+				}
+			});
+			return await result.json();
+		}
 	};
-}
 
-export function useGuild(id: Snowflake): APIResponse<PartialGuild> {
-	console.log("called");
-
-	const fetcher = async () => await (await fetch(`${apiUri}/guilds/${id}`)).json();
-
-	const { data: guilds, error } = useSWR(`/api/guilds/${id}`, fetcher);
+	const { data, error } = useSWR("/api/users/@me/guilds", fetcher);
 
 	return {
-		data: guilds?.data,
-		isLoading: !error && !guilds?.data,
-		isError: error
+		data,
+		loading: !error && !data,
+		error
 	};
 }
 
 export function useCurrentUser(): APIResponse<PartialUser> {
-	const fetcher = async () => await (await fetch(apiUri + "/users/@me")).json();
+	const fetcher = async () => {
+		const session = await getSession();
 
-	const { data: user, error } = useSWR(`/api/users/@me`, fetcher);
+		if (session) {
+			const result = await fetch(getDiscordAPIWithPath("/users/@me"), {
+				headers: {
+					Authorization: `Bearer ${session.accessToken}`
+				}
+			});
+			return await result.json();
+		}
+	};
+
+	const { data, error } = useSWR("/api/users/@me", fetcher);
 
 	return {
-		data: user?.data,
-		isLoading: !error && !user?.data,
-		isError: error
+		data,
+		loading: !error && !data,
+		error
 	};
 }

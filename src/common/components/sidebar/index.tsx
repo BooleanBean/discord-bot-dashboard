@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { FC } from "react";
-import { useAppSelector } from "../../../setup/hooks";
 import { classNames } from "../../../utils";
 import { getIcon } from "../../../utils/icons";
 import GuildCard from "./guild-card";
@@ -10,7 +9,6 @@ type SidebarProps = {};
 
 const Sidebar: FC<SidebarProps> = () => {
 	const router = useRouter();
-	const guild = useAppSelector((state) => state.guild.data);
 
 	const navigationWithCategories = [
 		{
@@ -18,12 +16,12 @@ const Sidebar: FC<SidebarProps> = () => {
 			items: [
 				{
 					name: "Dashboard",
-					href: "/guilds/" + guild?.id,
+					href: `/app/guilds/${router.query.guildId}`,
 					icon: getIcon("dashboard")
 				},
 				{
 					name: "Statistics",
-					href: "/guilds/" + guild?.id + "/stats",
+					href: `/app/guilds/${router.query.guildId}/statistics`,
 					icon: getIcon("chartPie"),
 					badge: (
 						<span className="inline-flex justify-center items-center px-2 ml-3 text-sm font-medium text-gray-800 bg-gray-200 rounded-full dark:bg-gray-600 dark:text-gray-300">
@@ -33,7 +31,7 @@ const Sidebar: FC<SidebarProps> = () => {
 				},
 				{
 					name: "Settings",
-					href: "/guilds/" + guild?.id + "/settings",
+					href: `/app/guilds/${router.query.guildId}/settings`,
 					icon: getIcon("settings")
 				}
 			]

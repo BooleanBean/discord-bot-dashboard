@@ -1,15 +1,28 @@
 import type { APIPartialGuild, APIUser, Snowflake } from "discord-api-types/v9";
 import type { NextPage } from "next";
+import "next-auth";
 import type { ReactElement } from "react";
+
+declare module "next-auth" {
+	interface Session {
+		accessToken: string;
+	}
+}
+
+declare module "next-auth/jwt" {
+	interface JWT {
+		accessToken: string;
+	}
+}
 
 export type NextPageWithLayout<I = {}> = NextPage<I> & {
 	getLayout?: (page: ReactElement) => ReactNode;
 };
 
-export interface APIResponse<D = any> {
-	isError: any | null;
-	isLoading: boolean;
-	data: D | undefined;
+export interface APIResponse<ResponseData = any> {
+	error: any;
+	loading: boolean;
+	data: ResponseData | null;
 }
 
 interface Session {
@@ -17,7 +30,6 @@ interface Session {
 }
 
 export interface PartialGuild extends APIPartialGuild {
-	banner: string | null;
 	stats: PartialGuildStats | null;
 }
 

@@ -1,12 +1,12 @@
 import Head from "next/head";
-import MainLayout from "../../../common/layouts/MainLayout";
-import { NextPageWithLayout } from "../../../common/types";
-import { useAppSelector } from "../../../setup/hooks";
+import { useRouter } from "next/router";
+import MainLayout from "../../../../common/layouts/MainLayout";
+import { NextPageWithLayout } from "../../../../common/types";
 
 type GuildProps = {};
 
 const Guild: NextPageWithLayout<GuildProps> = () => {
-	const guild = useAppSelector((state) => state.guild.data);
+	const router = useRouter();
 
 	return (
 		<>
@@ -15,7 +15,8 @@ const Guild: NextPageWithLayout<GuildProps> = () => {
 				<meta name="description" content="A bot." />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			Guild settings {JSON.stringify(guild)}
+
+			<div>guild settings - {router.query.guildId}</div>
 		</>
 	);
 };
