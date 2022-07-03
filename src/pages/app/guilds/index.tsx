@@ -25,7 +25,7 @@ const Guilds: NextPageWithLayout = () => {
 			</Head>
 
 			<div className="container mx-auto">
-				<div className="md:mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8">
+				<div className="2xl:mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8">
 					{data.map((guild) => (
 						<button
 							onClick={() => handleClick(guild)}

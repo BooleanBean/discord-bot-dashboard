@@ -8,9 +8,9 @@ type CleanLayoutProps = {
 const CleanLayout: FC<CleanLayoutProps> = ({ children }) => {
 	return (
 		<>
-			<Header />
+			<Header className="border-none" />
 
-			<main className="overflow-y-auto p-6 w-full h-[calc(theme(height.full)_-_theme(height.14))]">
+			<main className="overflow-y-auto p-4 w-full h-[calc(theme(height.full)_-_theme(height.14))]">
 				{children}
 			</main>
 		</>

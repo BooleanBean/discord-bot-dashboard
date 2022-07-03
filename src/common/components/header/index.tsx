@@ -1,10 +1,21 @@
 import Link from "next/link";
+import { FC } from "react";
+import { classNames } from "../../../utils";
 import { getIcon } from "../../../utils/icons";
 import ProfileDropdownButton from "../dropdowns/profile-dropdown-button";
 
-const Header = () => {
+type HeaderProps = {
+	className?: string;
+};
+
+const Header: FC<HeaderProps> = ({ className }) => {
 	return (
-		<header className="px-6 py-2 bg-gray-900 dark:text-gray-100 border-b border-gray-700">
+		<header
+			className={classNames(
+				"px-6 py-2 bg-gray-900 dark:text-gray-100 border-b border-gray-700",
+				className
+			)}
+		>
 			<div className="flex justify-between items-center h-12">
 				<div className="flex">
 					<Link href="/" passHref>
