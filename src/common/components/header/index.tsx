@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { FC } from "react";
+import { useAppSelector } from "../../../setup/hooks";
 import { classNames } from "../../../utils";
 import { getIcon } from "../../../utils/icons";
 import ProfileDropdownButton from "../dropdowns/profile-dropdown-button";
@@ -9,10 +10,13 @@ type HeaderProps = {
 };
 
 const Header: FC<HeaderProps> = ({ className }) => {
+    const site = useAppSelector(s => s.site);
+
     return (
         <header
             className={classNames(
-                "flex-shrink-0 px-6 flex items-center justify-between bg-gray-900 text-gray-100 border-b border-gray-700 h-14",
+                "z-10 flex-shrink-0 px-6 flex items-center justify-between bg-gray-900 text-gray-100 h-14",
+                site.headerBorder ? "border border-gray-700" : "border-transparent",
                 className
             )}
         >

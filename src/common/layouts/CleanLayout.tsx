@@ -1,6 +1,6 @@
 import { FC, ReactElement } from "react";
-import Scroll from "react-perfect-scrollbar";
 import Header from "../components/header";
+import Scroller from "../components/scroller";
 
 type CleanLayoutProps = {
     children: ReactElement;
@@ -8,16 +8,10 @@ type CleanLayoutProps = {
 
 const CleanLayout: FC<CleanLayoutProps> = ({ children }) => {
     return (
-        <>
-            <Header className="border-none" />
-
-            <Scroll
-                component="main"
-                className="overflow-x-hidden overflow-y-auto h-[calc(theme(height.full)_-_theme(height.14))]"
-            >
-                <div className="container mx-auto">{children}</div>
-            </Scroll>
-        </>
+        <Scroller>
+            <Header className="sticky top-0 backdrop-filter backdrop-blur-xl bg-opacity-20" />
+            <main className="container mx-auto">{children}</main>
+        </Scroller>
     );
 };
 

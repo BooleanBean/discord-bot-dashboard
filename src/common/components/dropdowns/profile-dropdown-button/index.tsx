@@ -42,7 +42,7 @@ const ProfileDropdownButton: FC<ProfileDropdownButtonProps> = () => {
         <div className="relative" ref={ref}>
             <button
                 onClick={() => setOpenMenu(s => !s)}
-                className="relative z-10 flex items-center text-sm rounded-full bg-gray-700"
+                className="relative flex items-center text-sm rounded-full bg-gray-700"
             >
                 <Avatar
                     rounded
@@ -64,7 +64,7 @@ const ProfileDropdownButton: FC<ProfileDropdownButtonProps> = () => {
                 leaveFrom="transform scale-100 opacity-100"
                 leaveTo="transform scale-95 opacity-0"
             >
-                <div className="absolute right-0 z-20 w-56 py-2 mt-2 overflow-hidden rounded-md shadow-xl bg-gray-800">
+                <div className="absolute right-0 w-56 py-2 mt-2 overflow-hidden rounded-md shadow-xl bg-gray-800">
                     <Link href={`/app/users/${data.id}/profile`} passHref>
                         <a className="flex items-center p-3 -mt-2 text-sm text-gray-600 transition-colors duration-200 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
                             <div className="flex-shrink-0">

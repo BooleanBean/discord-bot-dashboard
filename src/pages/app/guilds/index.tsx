@@ -28,8 +28,8 @@ const Guilds: NextPageWithLayout = () => {
                 <title>Clay</title>
             </Head>
 
-            <div className="2xl:mt-20 flex flex-col items-center">
-                <h2 className="font-bold text-2xl mb-12">Select a Guild</h2>
+            <div className="mt-10 xl:mt-20 flex flex-col items-center">
+                <h2 className="font-bold text-4xl mb-12">Select a Guild</h2>
 
                 <div className="mb-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 lg:gap-9">
                     {data.map(guild => (
@@ -38,7 +38,7 @@ const Guilds: NextPageWithLayout = () => {
                             key={guild.id}
                             className={classNames(
                                 guild.owner ? "cursor-pointer" : "opacity-40 cursor-not-allowed",
-                                "overflow-hidden flex flex-col justify-between max-w-md  h-64 transition duration-200 ease-out rounded-xl border bg-gray-800 border-gray-700 hover:shadow-2xl hover:scale-105 hover:-translate-y-3"
+                                "overflow-hidden flex flex-col justify-between max-w-md  h-72 transition duration-200 ease-out rounded-xl border bg-gray-800 border-gray-700 hover:shadow-2xl hover:scale-105 hover:-translate-y-3"
                             )}
                         >
                             <div className="flex-1 relative">
@@ -49,7 +49,7 @@ const Guilds: NextPageWithLayout = () => {
                                     alt={guild.name}
                                 />
 
-                                <div className="relative -bottom-4 z-1 w-full h-full flex items-end">
+                                <div className="relative -bottom-4 w-full h-full flex items-end">
                                     <div className="mx-3 mb-3 flex items-center">
                                         <div className="relative inline-block flex-shrink-0 w-20 h-20 rounded-xl overflow-hidden">
                                             <GuildIcon
