@@ -6,23 +6,22 @@ import { NextPageWithLayout } from "../../../../common/types";
 type GuildStatisticsProps = {};
 
 const GuildStatistics: NextPageWithLayout<GuildStatisticsProps> = () => {
-	const router = useRouter();
+    const router = useRouter();
 
-	return (
-		<>
-			<Head>
-				<title>Guild Statistics | Clay Bot</title>
-				<meta name="description" content="A bot." />
-				<link rel="icon" href="/favicon.ico" />
-			</Head>
+    return (
+        <>
+            <Head>
+                <title>Guild Statistics | Clay</title>
+                <meta name="description" content="A bot." />
+            </Head>
 
-			<div>guild statistics - {router.query.guildId}</div>
-		</>
-	);
+            <div>guild statistics - {router.query.guildId}</div>
+        </>
+    );
 };
 
-GuildStatistics.getLayout = (page) => {
-	return <MainLayout>{page}</MainLayout>;
+GuildStatistics.getLayout = page => {
+    return <MainLayout>{page}</MainLayout>;
 };
 
 export default GuildStatistics;

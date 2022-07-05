@@ -1,33 +1,35 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
-import PrimaryButton from "../../../../common/components/buttons/primary";
-import SecondaryButton from "../../../../common/components/buttons/secondary";
 import MainLayout from "../../../../common/layouts/MainLayout";
 import { NextPageWithLayout } from "../../../../common/types";
+import { useCurrentUser } from "../../../../utils/api/hooks";
 
 type GuildProps = {};
 
 const Guild: NextPageWithLayout<GuildProps> = () => {
-	const router = useRouter();
+    const router = useRouter();
+    const { data: currentUser, loading, error } = useCurrentUser();
 
-	return (
-		<>
-			<Head>
-				<title>Clay Bot</title>
-				<meta name="description" content="A bot." />
-				<link rel="icon" href="/favicon.ico" />
-			</Head>
+    if (loading) return <div>loading...</div>;
+    if (!currentUser) return <div>No data</div>;
+    if (error) return <div>An error occured</div>;
 
-			<div>
-				<PrimaryButton>Primary</PrimaryButton>
-				<SecondaryButton>Secondary</SecondaryButton>
-			</div>
-		</>
-	);
+    return (
+        <>
+            <Head>
+                <title>Guild Dashboard | Clay</title>
+                <meta name="description" content="A bot." />
+            </Head>
+
+            <div>
+                <h1>Hello, {currentUser.username}</h1>
+            </div>
+        </>
+    );
 };
 
-Guild.getLayout = (page) => {
-	return <MainLayout>{page}</MainLayout>;
+Guild.getLayout = page => {
+    return <MainLayout>{page}</MainLayout>;
 };
 
 export default Guild;

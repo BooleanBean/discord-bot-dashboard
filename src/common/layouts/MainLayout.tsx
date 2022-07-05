@@ -3,20 +3,20 @@ import Header from "../components/header";
 import Sidebar from "../components/sidebar";
 
 type MainLayoutProps = {
-	children: ReactElement;
+    children: ReactElement;
 };
 
 const MainLayout: FC<MainLayoutProps> = ({ children }) => {
-	return (
-		<div className="h-full flex flex-col">
-			<Header />
+    return (
+        <div className="h-full flex flex-col">
+            <Header />
 
-			<main className="overflow-hidden flex-1 flex h-full">
-				<Sidebar />
-				<div className="overflow-y-auto p-6 w-full h-full">{children}</div>
-			</main>
-		</div>
-	);
+            <div className="flex h-full">
+                <Sidebar />
+                <main className="container mx-auto">{children}</main>
+            </div>
+        </div>
+    );
 };
 
 export default MainLayout;

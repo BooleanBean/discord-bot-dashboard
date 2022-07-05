@@ -1,69 +1,85 @@
+import { APIGuild } from "discord-api-types/v10";
 import Head from "next/head";
 import { useRouter } from "next/router";
+import GuildBanner from "../../../common/components/guild/guild-banner";
+import GuildIcon from "../../../common/components/guild/guild-icon";
 import CleanLayout from "../../../common/layouts/CleanLayout";
-import type { NextPageWithLayout, PartialGuild } from "../../../common/types";
-import { getGuildBannerURL, getGuildIconURL } from "../../../utils/api";
+import type { NextPageWithLayout } from "../../../common/types";
+import { classNames } from "../../../utils";
 import { useGuilds } from "../../../utils/api/hooks";
 
 const Guilds: NextPageWithLayout = () => {
-	const { data, error, loading } = useGuilds();
-	const router = useRouter();
+    const { data, error, loading } = useGuilds();
+    const router = useRouter();
 
-	if (loading) return <div>loading...</div>;
-	if (!data) return <div>No data</div>;
-	if (error) return <div>An error occured</div>;
+    if (loading) return <div>loading...</div>;
+    if (!data) return <div>No data</div>;
+    if (error) return <div>An error occured</div>;
 
-	const handleClick = async (selectedGuild: PartialGuild) => {
-		await router.push("guilds/" + selectedGuild.id);
-	};
+    const handleClick = async (selectedGuild: APIGuild) => {
+        if (!selectedGuild.owner) return;
 
-	return (
-		<>
-			<Head>
-				<title>Clay Bot</title>
-				<meta name="description" content="A bot." />
-			</Head>
+        await router.push("guilds/" + selectedGuild.id);
+    };
 
-			<div className="container mx-auto">
-				<div className="2xl:mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8">
-					{data.map((guild) => (
-						<button
-							onClick={() => handleClick(guild)}
-							key={guild.id}
-							className="overflow-hidden max-w-sm bg-white rounded-xl border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700"
-						>
-							<div className="relative">
-								<div className="rounded-xl gradient-mask-b-0">
-									<img
-										src={getGuildBannerURL(guild.id, guild.banner)}
-										alt={guild.name}
-									/>
-								</div>
-								<img
-									className="rounded-xl absolute bottom-0 -translate-x-1/2 inset-x-1/2  w-20 h-20 "
-									src={getGuildIconURL(guild.id, guild.icon)}
-									alt={guild.name}
-								/>
-							</div>
-							<div className="p-5">
-								<h5 className="mb-2 text-lg font-bold tracking-tight text-gray-900 dark:text-white">
-									{guild.name}
-								</h5>
-								<p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-									{guild.description ??
-										"Here are the biggest enterprise technology."}
-								</p>
-							</div>
-						</button>
-					))}
-				</div>
-			</div>
-		</>
-	);
+    return (
+        <>
+            <Head>
+                <title>Clay</title>
+            </Head>
+
+            <div className="2xl:mt-20 flex flex-col items-center">
+                <h2 className="font-bold text-2xl mb-12">Select a Guild</h2>
+
+                <div className="mb-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 lg:gap-9">
+                    {data.map(guild => (
+                        <div
+                            onClick={() => handleClick(guild)}
+                            key={guild.id}
+                            className={classNames(
+                                guild.owner ? "cursor-pointer" : "opacity-40 cursor-not-allowed",
+                                "overflow-hidden flex flex-col justify-between max-w-md  h-64 transition duration-200 ease-out rounded-xl border bg-gray-800 border-gray-700 hover:shadow-2xl hover:scale-105 hover:-translate-y-3"
+                            )}
+                        >
+                            <div className="flex-1 relative">
+                                <GuildBanner
+                                    className="gradient-mask-b-0"
+                                    id={guild.id}
+                                    banner={guild.banner}
+                                    alt={guild.name}
+                                />
+
+                                <div className="relative -bottom-4 z-1 w-full h-full flex items-end">
+                                    <div className="mx-3 mb-3 flex items-center">
+                                        <div className="relative inline-block flex-shrink-0 w-20 h-20 rounded-xl overflow-hidden">
+                                            <GuildIcon
+                                                id={guild.id}
+                                                icon={guild.icon}
+                                                alt={guild.name}
+                                            />
+                                        </div>
+                                        <div className="ml-4">
+                                            <h5 className="text-lg font-bold tracking-tight text-white">
+                                                {guild.name}
+                                            </h5>
+                                            <p className="text-gray-300">
+                                                {guild.description ?? "Here are the best guild"}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="flex h-28 p-4"></div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </>
+    );
 };
 
-Guilds.getLayout = (page) => {
-	return <CleanLayout>{page}</CleanLayout>;
+Guilds.getLayout = page => {
+    return <CleanLayout>{page}</CleanLayout>;
 };
 
 export default Guilds;

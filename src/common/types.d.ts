@@ -1,56 +1,63 @@
-import type { APIPartialGuild, APIUser, Snowflake } from "discord-api-types/v9";
+import type { APIUser, Snowflake } from "discord-api-types/v10";
 import type { NextPage } from "next";
 import "next-auth";
 import type { ReactElement } from "react";
+import { KeyedMutator } from "swr";
 import { Icons } from "../utils/icons";
 
 declare module "next-auth" {
-	interface Session {
-		accessToken: string;
-	}
+    interface Session {
+        accessToken: string;
+    }
 }
 
 declare module "next-auth/jwt" {
-	interface JWT {
-		accessToken: string;
-	}
+    interface JWT {
+        accessToken: string;
+    }
 }
 
 export type NextPageWithLayout<I = {}> = NextPage<I> & {
-	getLayout?: (page: ReactElement) => ReactNode;
+    getLayout?: (page: ReactElement) => ReactNode;
 };
 
 export interface APIResponse<ResponseData = any> {
-	error: any;
-	loading: boolean;
-	data: ResponseData | null;
+    error?: any;
+    loading: boolean;
+    data?: ResponseData;
+    mutate: KeyedMutator<ResponseData | undefined>;
 }
 
 interface Session {
-	id: Snowflake;
+    id: Snowflake;
 }
 
-export interface PartialGuild extends APIPartialGuild {
-	stats: PartialGuildStats | null;
+export interface Guild {
+    id: Snowflake;
+    name: string;
+    description: string;
+    icon: string | null;
+    owner_id: Snowflake;
+    stats?: PartialGuildStats;
 }
 
 export interface PartialGuildStats {
-	memberCount: number;
-	onlineMemberCount: number;
+    memberCount: number;
+    onlineMemberCount: number;
 }
 
-export interface PartialUser extends APIUser {
-	guilds: PartialGuild[];
+export interface User extends APIUser {
+    guilds: Guild[];
 }
 
 export interface NavigationLinksWithCategories {
-	category: string;
-	items: NavigationLink[];
+    category: string;
+    items: NavigationLink[];
 }
 
 export interface NavigationLink {
-	name: string;
-	href: string;
-	icon: keyof Icons;
-	badge?: ReactElement;
+    name: string;
+    href: string;
+    icon: keyof Icons;
+    badge?: ReactElement;
 }

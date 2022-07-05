@@ -3,25 +3,29 @@ import { useRouter } from "next/router";
 import MainLayout from "../../../../common/layouts/MainLayout";
 import { NextPageWithLayout } from "../../../../common/types";
 
-type GuildProps = {};
+type GuildBansProps = {};
 
-const Guild: NextPageWithLayout<GuildProps> = () => {
+const GuildBans: NextPageWithLayout<GuildBansProps> = () => {
     const router = useRouter();
+
+    // if (loading) return <div>loading...</div>;
+    // if (!data) return <div>No data</div>;
+    // if (error) return <div>An error occured</div>;
 
     return (
         <>
             <Head>
-                <title>Guild Settings | Clay</title>
+                <title>Guild Bans | Clay</title>
                 <meta name="description" content="A bot." />
             </Head>
 
-            <div>guild settings - {router.query.guildId}</div>
+            {/* <div>{JSON.stringify(data)}</div> */}
         </>
     );
 };
 
-Guild.getLayout = page => {
+GuildBans.getLayout = page => {
     return <MainLayout>{page}</MainLayout>;
 };
 
-export default Guild;
+export default GuildBans;

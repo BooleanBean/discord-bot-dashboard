@@ -1,39 +1,18 @@
 import { createSlice } from "@reduxjs/toolkit";
-import type { RootState } from "../index";
 
-interface SiteState {
-	isModalOpen: boolean;
-	alphaVersion: boolean;
-}
+interface SiteState {}
 
-const initialState: SiteState = {
-	isModalOpen: false,
-	alphaVersion: false
-};
+const initialState: SiteState = {};
 
 export const siteSlice = createSlice({
-	name: "site",
-	initialState,
-	reducers: {
-		openModal: (state) => {
-			state.isModalOpen = true;
-		},
-		closeModal: (state) => {
-			state.isModalOpen = false;
-		},
-		setAlphaVersion: (state) => {
-			localStorage.setItem("alpha-version", "1");
-			state.alphaVersion = true;
-		},
-		clearAlphaVersion: (state) => {
-			localStorage.removeItem("alpha-version");
-			state.alphaVersion = false;
-		}
-	}
+    name: "site",
+    initialState,
+    reducers: {
+        site: () => {}
+    }
 });
 
-export const { openModal, closeModal, clearAlphaVersion, setAlphaVersion } = siteSlice.actions;
-export const selectModalOpen = (state: RootState) => state.site.isModalOpen;
+export const { site } = siteSlice.actions;
 
 const SiteManager = siteSlice.reducer;
 export default SiteManager;

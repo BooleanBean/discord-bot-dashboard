@@ -1,9 +1,9 @@
 import type { FC } from "react";
 
-type ComponentProps = {};
+type Props = {};
 
-const Component: FC<ComponentProps> = () => {
-	return <div>Component</div>;
+const Component: FC<Props> = () => {
+    return <div>Component</div>;
 };
 
 export default Component;
