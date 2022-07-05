@@ -44,6 +44,7 @@ const GuildSwitcher: FC<Props> = () => {
                                 onChange={event => setQuery(event.target.value)}
                             />
                         )}
+
                         {!isOpen && (
                             <div className="w-full flex items-center bg-gray-800 rounded-lg p-4">
                                 <div className="relative h-12 w-12 overflow-hidden rounded-xl">

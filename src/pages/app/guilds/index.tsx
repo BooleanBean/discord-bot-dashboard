@@ -5,7 +5,7 @@ import GuildBanner from "../../../common/components/guild/guild-banner";
 import GuildIcon from "../../../common/components/guild/guild-icon";
 import CleanLayout from "../../../common/layouts/CleanLayout";
 import type { NextPageWithLayout } from "../../../common/types";
-import { classNames } from "../../../utils";
+import { classNames, sortByName } from "../../../utils";
 import { useGuilds } from "../../../utils/api/hooks";
 
 const Guilds: NextPageWithLayout = () => {
@@ -32,7 +32,7 @@ const Guilds: NextPageWithLayout = () => {
                 <h2 className="font-bold text-4xl mb-12">Select a Guild</h2>
 
                 <div className="mb-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 lg:gap-9">
-                    {data.map(guild => (
+                    {data.sort(sortByName).map(guild => (
                         <div
                             onClick={() => handleClick(guild)}
                             key={guild.id}

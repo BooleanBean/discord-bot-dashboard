@@ -17,7 +17,7 @@ const MainLayout: FC<MainLayoutProps> = ({ children }) => {
 
             <div className="flex h-[calc(100%_-_3.5rem)]">
                 {site.sidebar && <Sidebar />}
-                <Scroller component="main" className="container mx-auto">
+                <Scroller component="main" className="container mx-auto max-w-7xl px-4 md-px-0">
                     {children}
                 </Scroller>
             </div>
