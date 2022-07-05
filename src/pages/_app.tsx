@@ -3,7 +3,7 @@ import type { AppProps } from "next/app";
 import App from "next/app";
 import Head from "next/head";
 import "react-perfect-scrollbar/dist/css/styles.css";
-import "../assets/styles/tailwind.css";
+import "../assets/styles/setup.css";
 import type { NextPageWithLayout } from "../common/types";
 import { wrapper } from "../setup";
 

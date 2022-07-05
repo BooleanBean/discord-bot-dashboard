@@ -1,9 +1,10 @@
 import { useRouter } from "next/router";
 import { FC } from "react";
-import Scroll from "react-perfect-scrollbar";
 import { NavigationLinksWithCategories } from "../../types";
+import Scroller from "../scroller";
 import GuildCard from "./guild-card";
 import GuildLink from "./guild-link";
+import GuildSwitcher from "./guild-switcher";
 
 type SidebarProps = {};
 
@@ -53,9 +54,9 @@ const Sidebar: FC<SidebarProps> = () => {
     ];
 
     return (
-        <Scroll
+        <Scroller
             component="aside"
-            className="relative h-full flex-shrink-0 flex flex-col justify-between w-64 border-r bg-gray-900 border-gray-700"
+            className="flex-shrink-0 flex flex-col justify-between w-64 border-r border-gray-700"
         >
             <div className="px-6 pt-6">
                 <GuildCard />
@@ -75,8 +76,8 @@ const Sidebar: FC<SidebarProps> = () => {
                     ))}
                 </nav>
             </div>
-            <div>guild switcher</div>
-        </Scroll>
+            <GuildSwitcher />
+        </Scroller>
     );
 };
 

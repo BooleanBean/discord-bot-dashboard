@@ -9,7 +9,7 @@ type CleanLayoutProps = {
 const CleanLayout: FC<CleanLayoutProps> = ({ children }) => {
     return (
         <Scroller>
-            <Header className="sticky top-0 backdrop-filter backdrop-blur-xl bg-opacity-20" />
+            <Header />
             <main className="container mx-auto">{children}</main>
         </Scroller>
     );

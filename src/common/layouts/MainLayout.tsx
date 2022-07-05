@@ -1,5 +1,7 @@
 import { FC, ReactElement } from "react";
+import { useAppSelector } from "../../setup/hooks";
 import Header from "../components/header";
+import Scroller from "../components/scroller";
 import Sidebar from "../components/sidebar";
 
 type MainLayoutProps = {
@@ -7,15 +9,19 @@ type MainLayoutProps = {
 };
 
 const MainLayout: FC<MainLayoutProps> = ({ children }) => {
-    return (
-        <div className="h-full flex flex-col">
-            <Header />
+    const site = useAppSelector(s => s.site);
 
-            <div className="flex h-full">
-                <Sidebar />
-                <main className="container mx-auto">{children}</main>
+    return (
+        <>
+            <Header forceBorder={true} />
+
+            <div className="flex h-[calc(100%_-_3.5rem)]">
+                {site.sidebar && <Sidebar />}
+                <Scroller component="main" className="container mx-auto">
+                    {children}
+                </Scroller>
             </div>
-        </div>
+        </>
     );
 };
 
