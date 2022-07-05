@@ -19,7 +19,7 @@ const Header: FC<HeaderProps> = ({ className, forceBorder }) => {
     return (
         <header
             className={classNames(
-                "sticky top-0 backdrop-filter backdrop-blur-xl bg-opacity-20 z-10 flex-shrink-0 px-6 flex items-center justify-between text-gray-100 h-14",
+                "transition sticky top-0 backdrop-filter backdrop-blur-xl bg-opacity-20 z-10 flex-shrink-0 px-6 flex items-center justify-between text-gray-100 h-14",
                 forceBorder
                     ? "border-b border-gray-700"
                     : site.headerBorder
