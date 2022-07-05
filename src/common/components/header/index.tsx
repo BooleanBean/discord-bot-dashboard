@@ -16,7 +16,7 @@ const Header: FC<HeaderProps> = ({ className }) => {
         <header
             className={classNames(
                 "z-10 flex-shrink-0 px-6 flex items-center justify-between bg-gray-900 text-gray-100 h-14",
-                site.headerBorder ? "border border-gray-700" : "border-transparent",
+                site.headerBorder ? "border-b border-gray-700" : "border-transparent",
                 className
             )}
         >
