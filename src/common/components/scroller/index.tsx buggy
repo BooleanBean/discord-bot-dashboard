@@ -1,16 +1,14 @@
 import { FC, ReactNode } from "react";
-import Scroll from "react-perfect-scrollbar";
+import Scroll, { CustomScrollProps } from "react-custom-scroll";
+
 import { useDispatch } from "react-redux";
 import { setHeaderBorder } from "../../../setup/site-manager";
-import { classNames } from "../../../utils";
 
-type Props = {
+type Props = CustomScrollProps & {
     children: ReactNode;
-    component?: string;
-    className?: string;
 };
 
-const Scroller: FC<Props> = ({ component, className, children }) => {
+const Scroller: FC<Props> = ({ children, ...props }) => {
     const dispatch = useDispatch();
 
     const onScroll = (e: any) => {
@@ -22,11 +20,7 @@ const Scroller: FC<Props> = ({ component, className, children }) => {
     };
 
     return (
-        <Scroll
-            onScroll={onScroll}
-            component={component}
-            className={classNames("overflow-x-hidden overflow-y-auto", className)}
-        >
+        <Scroll onScroll={onScroll} {...props}>
             {children}
         </Scroll>
     );

@@ -6,6 +6,7 @@ import { FC, Fragment, useState } from "react";
 import useOnclickOutside from "react-cool-onclickoutside";
 import { getUserAvatarURL } from "../../../../utils/api";
 import { useCurrentUser } from "../../../../utils/api/hooks";
+import Spinner from "../../spinner";
 import ProfileDropdownButtonItem, {
     ProfileDropdownButtonItemOptions
 } from "./profile-dropdown-button-item";
@@ -17,7 +18,7 @@ const ProfileDropdownButton: FC<ProfileDropdownButtonProps> = () => {
     const [openMenu, setOpenMenu] = useState<boolean>(false);
     const ref = useOnclickOutside(() => setOpenMenu(false));
 
-    if (loading) return <div>loading...</div>;
+    if (loading) return <Spinner isLoading={loading} size="sm" />;
     if (!data) return <div>No data</div>;
     if (error) return <div>An error occured</div>;
 

@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
-import MainLayout from "../../../../common/layouts/MainLayout";
+import GuildDashboardLayout from "../../../../common/layouts/GuildDashboardLayout";
 import { NextPageWithLayout } from "../../../../common/types";
 
 type GuildProps = {};
@@ -11,7 +11,7 @@ const Guild: NextPageWithLayout<GuildProps> = () => {
     return (
         <>
             <Head>
-                <title>Guild Settings | Clay</title>
+                <title>Guild Settings | Open Source Bot Dashboard</title>
                 <meta name="description" content="A bot." />
             </Head>
 
@@ -21,7 +21,7 @@ const Guild: NextPageWithLayout<GuildProps> = () => {
 };
 
 Guild.getLayout = page => {
-    return <MainLayout>{page}</MainLayout>;
+    return <GuildDashboardLayout>{page}</GuildDashboardLayout>;
 };
 
 export default Guild;

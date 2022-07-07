@@ -1,7 +1,6 @@
 import { useRouter } from "next/router";
 import { FC } from "react";
 import { NavigationLinksWithCategories } from "../../types";
-import Scroller from "../scroller";
 import GuildCard from "./guild-card";
 import GuildLink from "./guild-link";
 import GuildSwitcher from "./guild-switcher";
@@ -54,10 +53,7 @@ const Sidebar: FC<SidebarProps> = () => {
     ];
 
     return (
-        <Scroller
-            component="aside"
-            className="flex-shrink-0 flex flex-col justify-between w-64 border-r border-gray-700"
-        >
+        <div className="flex-shrink-0 flex flex-col justify-between w-72 border-r border-gray-700">
             <div className="px-6 pt-6">
                 <GuildCard />
 
@@ -77,7 +73,7 @@ const Sidebar: FC<SidebarProps> = () => {
                 </nav>
             </div>
             <GuildSwitcher />
-        </Scroller>
+        </div>
     );
 };
 

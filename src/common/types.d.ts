@@ -38,12 +38,16 @@ export interface Guild {
     description: string;
     icon: string | null;
     owner_id: Snowflake;
-    stats?: PartialGuildStats;
+    prefix: string;
+    stats: PartialGuildStats;
 }
 
 export interface PartialGuildStats {
-    memberCount: number;
-    onlineMemberCount: number;
+    member_count: number;
+    online_member_count: number;
+    new_members: number;
+    commands_used: number;
+    messages_sent: number;
 }
 
 export interface User extends APIUser {

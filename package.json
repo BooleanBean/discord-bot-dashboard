@@ -22,10 +22,12 @@
         "react": "18.2.0",
         "react-cool-onclickoutside": "^1.7.0",
         "react-dom": "18.2.0",
-        "react-perfect-scrollbar": "^1.5.8",
         "react-redux": "^8.0.2",
+        "react-spinners": "^0.13.3",
         "react-transition-group": "^4.4.2",
         "react-transitions-library": "^1.10.2",
+        "smooth-scrollbar": "^8.7.4",
+        "smooth-scrollbar-react": "^2.3.0",
         "swr": "^1.3.0",
         "tailwind-gradient-mask-image": "^1.0.0"
     },

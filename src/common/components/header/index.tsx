@@ -19,7 +19,7 @@ const Header: FC<HeaderProps> = ({ className, forceBorder }) => {
     return (
         <header
             className={classNames(
-                "transition sticky top-0 backdrop-filter backdrop-blur-xl bg-opacity-20 z-10 flex-shrink-0 px-6 flex items-center justify-between text-gray-100 h-14",
+                "transition sticky top-0 backdrop-filter backdrop-blur-lg bg-gray-900 bg-opacity-60 z-10 flex-shrink-0 px-6 flex items-center justify-between text-gray-100 h-16",
                 forceBorder
                     ? "border-b border-gray-700"
                     : site.headerBorder
@@ -29,7 +29,7 @@ const Header: FC<HeaderProps> = ({ className, forceBorder }) => {
             )}
         >
             <div className="flex items-center space-x-4">
-                <Link href="/" passHref>
+                <Link href="/app/guilds" passHref>
                     <a aria-label="Back to homepage" className="w-8 h-8 dark:text-indigo-600">
                         {getIcon("hand")}
                     </a>

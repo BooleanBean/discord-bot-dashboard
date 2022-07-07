@@ -3,7 +3,7 @@ import { APIGuild, APIUser } from "discord-api-types/v10";
 import { getSession } from "next-auth/react";
 import useSWR from "swr";
 import { getDiscordAPI } from ".";
-import type { APIResponse } from "../../common/types";
+import type { APIResponse, Guild } from "../../common/types";
 
 export function useGuilds(): APIResponse<APIGuild[]> {
     const fetcher = async (): Promise<APIGuild[] | undefined> => {
@@ -31,23 +31,22 @@ export function useGuilds(): APIResponse<APIGuild[]> {
     };
 }
 
-export function useDiscordGuild(id: Snowflake): APIResponse<APIGuild> {
-    const fetcher = async (): Promise<APIGuild | undefined> => {
+export function useBotGuild(id: Snowflake): APIResponse<Guild> {
+    const fetcher = async (): Promise<Guild | undefined> => {
         const session = await getSession();
 
         if (session) {
-            const result = await fetch(getDiscordAPI(`/users/@me/guilds/${id}/member`), {
-                headers: {
-                    Authorization: `Bearer ${session.accessToken}`
-                }
-            });
-            return await result.json();
+            const result = await fetch("http://localhost:3000/api/test/guilds/" + id);
+            const { error, data } = await result.json();
+
+            if (error) throw new Error(data.error);
+            return data;
         }
 
         return undefined;
     };
 
-    const { data, error, mutate } = useSWR(`/api/users/@me/guilds/${id}/member`, fetcher);
+    const { data, error, mutate } = useSWR(`/api/test/test/guilds/${id}`, fetcher);
 
     return {
         data,

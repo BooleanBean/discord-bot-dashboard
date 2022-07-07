@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
-import MainLayout from "../../../../common/layouts/MainLayout";
+import GuildDashboardLayout from "../../../../common/layouts/GuildDashboardLayout";
 import { NextPageWithLayout } from "../../../../common/types";
 
 type GuildBansProps = {};
@@ -15,7 +15,7 @@ const GuildBans: NextPageWithLayout<GuildBansProps> = () => {
     return (
         <>
             <Head>
-                <title>Guild Bans | Clay</title>
+                <title>Guild Bans | Open Source Bot Dashboard</title>
                 <meta name="description" content="A bot." />
             </Head>
 
@@ -25,7 +25,7 @@ const GuildBans: NextPageWithLayout<GuildBansProps> = () => {
 };
 
 GuildBans.getLayout = page => {
-    return <MainLayout>{page}</MainLayout>;
+    return <GuildDashboardLayout>{page}</GuildDashboardLayout>;
 };
 
 export default GuildBans;

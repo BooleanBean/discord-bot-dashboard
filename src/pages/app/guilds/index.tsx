@@ -1,5 +1,4 @@
 import { APIGuild } from "discord-api-types/v10";
-import Head from "next/head";
 import { useRouter } from "next/router";
 import GuildBanner from "../../../common/components/guild/guild-banner";
 import GuildIcon from "../../../common/components/guild/guild-icon";
@@ -24,21 +23,19 @@ const Guilds: NextPageWithLayout = () => {
 
     return (
         <>
-            <Head>
-                <title>Clay</title>
-            </Head>
+            <div className="mt-10 xl:mt-20">
+                <h2 className="font-bold text-5xl mb-12 text-center tracking-wider">
+                    Select a Guild
+                </h2>
 
-            <div className="mt-10 xl:mt-20 flex flex-col items-center">
-                <h2 className="font-bold text-4xl mb-12">Select a Guild</h2>
-
-                <div className="mb-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 lg:gap-9">
+                <div className="mb-10 grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4">
                     {data.sort(sortByName).map(guild => (
                         <div
                             onClick={() => handleClick(guild)}
                             key={guild.id}
                             className={classNames(
                                 guild.owner ? "cursor-pointer" : "opacity-40 cursor-not-allowed",
-                                "overflow-hidden flex flex-col justify-between max-w-md  h-72 transition duration-200 ease-out rounded-xl border bg-gray-800 border-gray-700 hover:shadow-2xl hover:scale-105 hover:-translate-y-3"
+                                "overflow-hidden flex flex-col justify-between h-72 transition duration-200 ease-out rounded-xl border bg-gray-800 border-gray-700 hover:shadow-2xl hover:scale-105 hover:-translate-y-3"
                             )}
                         >
                             <div className="flex-1 relative">

@@ -11,6 +11,9 @@ module.exports = {
         extend: {
             fontFamily: {
                 sans: ["Inter", "sans-serif"]
+            },
+            colors: {
+                spinner: "white"
             }
         }
     },

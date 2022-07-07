@@ -5,6 +5,6 @@
 @layer base {
     body,
     #__next {
-        @apply w-screen h-screen select-none;
+        @apply w-screen h-screen select-none max-h-max;
     }
 }

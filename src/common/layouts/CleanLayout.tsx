@@ -1,6 +1,5 @@
 import { FC, ReactElement } from "react";
 import Header from "../components/header";
-import Scroller from "../components/scroller";
 
 type CleanLayoutProps = {
     children: ReactElement;
@@ -8,10 +7,10 @@ type CleanLayoutProps = {
 
 const CleanLayout: FC<CleanLayoutProps> = ({ children }) => {
     return (
-        <Scroller>
+        <div className="overflow-auto h-full">
             <Header />
-            <main className="container mx-auto">{children}</main>
-        </Scroller>
+            <main className="container mx-auto max-w-7xl px-4">{children}</main>
+        </div>
     );
 };
 
