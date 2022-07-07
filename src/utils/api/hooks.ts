@@ -36,7 +36,7 @@ export function useBotGuild(id: Snowflake): APIResponse<Guild> {
         const session = await getSession();
 
         if (session) {
-            const result = await fetch("http://localhost:3000/api/test/guilds/" + id);
+            const result = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/test/guilds/` + id);
             const { error, data } = await result.json();
 
             if (error) throw new Error(data.error);
