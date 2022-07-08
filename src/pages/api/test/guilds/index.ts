@@ -10,13 +10,17 @@ type Data = {
     error: string | null;
 };
 
-export default async (req: NextApiRequest, res: NextApiResponse<Data>) => {
+async function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
     const session = await unstable_getServerSession(req, res, options);
 
     if (session) {
-        setTimeout(() => res.status(200).json({ data: guilds, status: 200, error: null }), 3000);
+        setTimeout(
+            () => res.status(200).json({ data: guilds, status: 200, error: null }),
+            3000
+        );
     } else {
         res.status(400).json({ data: null, status: 400, error: "Bad session" });
     }
-};
-78;
+}
+
+export default handler;

@@ -1,6 +1,6 @@
 {
-    "name": "bot-dashboard-with-nextjs",
-    "version": "0.2.0",
+    "name": "discord-bot-dashboardd",
+    "version": "0.8.0",
     "private": true,
     "scripts": {
         "dev": "next dev",

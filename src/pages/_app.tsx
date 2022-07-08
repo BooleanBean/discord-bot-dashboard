@@ -17,7 +17,7 @@ const MyApp = ({ Component, pageProps }: AppPropsWithLayout) => {
     const dispatch = useDispatch();
 
     const onScroll = (e: any) => {
-        if (e.target.scrollTop === 0 ?? e.target.scrollTop < 100) {
+        if (e.target.scrollTop < 15 ?? e.target.scrollTop < 100) {
             dispatch(setHeaderBorder(false));
         } else {
             dispatch(setHeaderBorder(true));
@@ -32,7 +32,10 @@ const MyApp = ({ Component, pageProps }: AppPropsWithLayout) => {
                 <meta name="description" content="A bot with a beatiful dashboard." />
             </Head>
 
-            <div className="bg-gray-900 text-white w-full h-full" onScrollCapture={onScroll}>
+            <div
+                className="bg-gray-900 text-white w-full h-full"
+                onScrollCapture={onScroll}
+            >
                 {getLayout(<Component {...pageProps} />)}
             </div>
         </SessionProvider>

@@ -13,11 +13,12 @@ const NotFound = () => {
                 objectPosition="center"
                 blurDataURL={NotFoundImage.src}
                 src={NotFoundImage}
+                alt="Not Found"
             />
             <div className="inset-0 bg-black opacity-30 absolute"></div>
             <div className="relative h-full flex flex-col justify-center items-center">
                 <h4 className="text-4xl font-semibold uppercase mb-4">Got Lost?</h4>
-                <Link href="/app/guilds" passHref>
+                <Link href="/" passHref>
                     <PrimaryButton>Go back</PrimaryButton>
                 </Link>
             </div>

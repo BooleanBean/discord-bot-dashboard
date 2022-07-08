@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { FC } from "react";
-import { getGuildIconURL } from "../../../../utils/api";
+import { getGuildIconURL } from "../../../../../utils/api";
 
 type GuildCardProps = {};
 

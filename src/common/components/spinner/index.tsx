@@ -1,8 +1,8 @@
 import type { FC } from "react";
 import HashLoader from "react-spinners/HashLoader";
+import { LoaderSizeProps } from "react-spinners/helpers/props";
 
-type Props = {
-    isLoading: boolean;
+type Props = LoaderSizeProps & {
     size: keyof typeof SpinnerSize;
 };
 
@@ -14,8 +14,8 @@ enum SpinnerSize {
     xl = 60
 }
 
-const Spinner: FC<Props> = ({ isLoading, size = "md" }) => {
-    return <HashLoader color="white" loading={isLoading} size={SpinnerSize[size]} />;
+const Spinner: FC<Props> = ({ size = "md" }) => {
+    return <HashLoader color="white" size={SpinnerSize[size]} children="data loaded" />;
 };
 
 export default Spinner;

@@ -1,7 +1,7 @@
 import { FC, ReactElement } from "react";
 import { useAppSelector } from "../../setup/hooks";
-import Header from "../components/header";
-import Sidebar from "../components/sidebar";
+import DashboardHeader from "../components/dashboard/dashboard-header";
+import Sidebar from "../components/dashboard/dashboard-sidebar";
 
 type Props = {
     children: ReactElement;
@@ -15,8 +15,8 @@ const GuildDashboardLayout: FC<Props> = ({ children }) => {
             {site.sidebar && <Sidebar />}
 
             <div className="w-full overflow-y-scroll overflow-x-hidden">
-                <Header />
-                <div className="container mx-auto max-w-7xl px-4">{children}</div>
+                <DashboardHeader />
+                <main className="container mx-auto">{children}</main>
             </div>
         </div>
     );

@@ -1,15 +1,21 @@
 import { FC, ReactElement } from "react";
-import Header from "../components/header";
+import StyledLink from "../components/links/styled-link";
 
-type CleanLayoutProps = {
+type Props = {
     children: ReactElement;
 };
 
-const CleanLayout: FC<CleanLayoutProps> = ({ children }) => {
+const CleanLayout: FC<Props> = ({ children }) => {
     return (
-        <div className="overflow-auto h-full">
-            <Header />
-            <main className="container mx-auto max-w-7xl px-4">{children}</main>
+        <div className="overflow-y-auto overflow-x-hidden h-full">
+            <main className="relative container mx-auto pt-32 pb-12">
+                <div className="absolute top-20 left-14">
+                    <StyledLink href="/" leftIcon="chevronLeft">
+                        Back
+                    </StyledLink>
+                </div>
+                {children}
+            </main>
         </div>
     );
 };

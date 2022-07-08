@@ -2,13 +2,18 @@
 const nextConfig = {
     reactStrictMode: true,
     images: {
-        domains: ["images.pexels.com", "cdn.discordapp.com", "seeklogo.com", "exploringbits.com"]
+        domains: [
+            "images.pexels.com",
+            "cdn.discordapp.com",
+            "seeklogo.com",
+            "exploringbits.com"
+        ]
     },
     async redirects() {
         return [
             {
-                source: "/",
-                destination: "/app/guilds",
+                source: "/dashboard",
+                destination: "/dashboard/guilds",
                 permanent: true
             }
         ];

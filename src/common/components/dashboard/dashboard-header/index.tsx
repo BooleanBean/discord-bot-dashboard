@@ -1,20 +1,22 @@
-import { useSession } from "next-auth/react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { FC } from "react";
-import { useAppSelector } from "../../../setup/hooks";
-import { classNames } from "../../../utils";
-import { getIcon } from "../../../utils/icons";
-import ProfileDropdownButton from "../dropdowns/profile-dropdown-button";
-import UnstyledLink from "../links/unstyled-link";
+import { useAppDispatch, useAppSelector } from "../../../../setup/hooks";
+import { setSidebar } from "../../../../setup/site-manager";
+import { classNames } from "../../../../utils";
+import { getIcon } from "../../../../utils/icons";
+import PrimaryButton from "../../buttons/primary";
+import ProfileDropdownButton from "../../dropdowns/profile-dropdown-button";
 
-type HeaderProps = {
+type Props = {
     className?: string;
     forceBorder?: boolean;
 };
 
-const Header: FC<HeaderProps> = ({ className, forceBorder }) => {
+const DashboardHeader: FC<Props> = ({ className, forceBorder }) => {
     const site = useAppSelector(s => s.site);
-    const { data, status } = useSession();
+    const dispatch = useAppDispatch();
+    const router = useRouter();
 
     return (
         <header
@@ -29,24 +31,19 @@ const Header: FC<HeaderProps> = ({ className, forceBorder }) => {
             )}
         >
             <div className="flex items-center space-x-4">
-                <Link href="/" passHref>
+                <Link href={"/dashboard/guilds/" + router.query.guildId} passHref>
                     <a className="w-8 h-8 dark:text-indigo-600">{getIcon("hand")}</a>
                 </Link>
-                {/* <h4 className="font-bold text-lg tracking-wider">
-                    Open Source Dashboard
-                </h4> */}
+
+                <PrimaryButton onClick={() => dispatch(setSidebar(!site.sidebar))}>
+                    Toggle Sidebar
+                </PrimaryButton>
             </div>
             <div className="items-center flex-shrink-0 flex">
-                <UnstyledLink href="/dashboard/guilds">Dashboard</UnstyledLink>
-
-                {data && (
-                    <div className="ml-4">
-                        <ProfileDropdownButton />
-                    </div>
-                )}
+                <ProfileDropdownButton />
             </div>
         </header>
     );
 };
 
-export default Header;
+export default DashboardHeader;

@@ -10,7 +10,7 @@ type Data = {
     error: string | null;
 };
 
-export default async (req: NextApiRequest, res: NextApiResponse<Data>) => {
+async function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
     const session = await unstable_getServerSession(req, res, options);
     const { guildId } = req.query;
 
@@ -19,9 +19,13 @@ export default async (req: NextApiRequest, res: NextApiResponse<Data>) => {
 
         !guild && res.status(404).json({ data: null, status: 404, error: "Bad guild" });
 
-        setTimeout(() => res.status(200).json({ data: guild, status: 200, error: null }), 3000);
+        setTimeout(
+            () => res.status(200).json({ data: guild, status: 200, error: null }),
+            3000
+        );
     } else {
         res.status(400).json({ data: null, status: 400, error: "Bad session" });
     }
-};
-78;
+}
+
+export default handler;

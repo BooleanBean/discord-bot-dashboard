@@ -2,8 +2,9 @@ import { Transition } from "@headlessui/react";
 import { Avatar } from "flowbite-react";
 import { signOut } from "next-auth/react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { FC, Fragment, useState } from "react";
-import useOnclickOutside from "react-cool-onclickoutside";
+import useOnClickOutside from "react-cool-onclickoutside";
 import { getUserAvatarURL } from "../../../../utils/api";
 import { useCurrentUser } from "../../../../utils/api/hooks";
 import Spinner from "../../spinner";
@@ -16,25 +17,31 @@ type ProfileDropdownButtonProps = {};
 const ProfileDropdownButton: FC<ProfileDropdownButtonProps> = () => {
     const { data, error, loading } = useCurrentUser();
     const [openMenu, setOpenMenu] = useState<boolean>(false);
-    const ref = useOnclickOutside(() => setOpenMenu(false));
+    const ref = useOnClickOutside(() => setOpenMenu(false));
+    const router = useRouter();
 
-    if (loading) return <Spinner isLoading={loading} size="sm" />;
+    if (loading) return <Spinner size="sm" />;
     if (!data) return <div>No data</div>;
     if (error) return <div>An error occured</div>;
 
     const sepItems: ProfileDropdownButtonItemOptions[][] = [
         [
-            { icon: "profile", href: `/app/users/${data.id}/profile`, text: "View Profile" },
+            {
+                icon: "profile",
+                href: `/app/users/${data.id}/profile`,
+                text: "View Profile"
+            },
             { icon: "settings", href: `/app/users/${data.id}/settings`, text: "Settings" }
         ],
         [
             { icon: "support", href: "/support", text: "Support" },
             {
                 icon: "signOut",
-                onClick: () => {
-                    signOut();
-                },
-                text: "Sign out"
+                text: "Sign out",
+                onClick: async () => {
+                    const data = await signOut({ redirect: false, callbackUrl: "/" });
+                    router.push(data.url);
+                }
             }
         ]
     ];
@@ -80,7 +87,9 @@ const ProfileDropdownButton: FC<ProfileDropdownButtonProps> = () => {
                             <div className="mx-3">
                                 <h4 className="text-sm font-semibold text-gray-600 dark:text-gray-300">
                                     {data.username}
-                                    <span className="text-gray-400">#{data.discriminator}</span>
+                                    <span className="text-gray-400">
+                                        #{data.discriminator}
+                                    </span>
                                 </h4>
                                 <p className="text-sm text-gray-500 dark:text-gray-400">
                                     {data.email}

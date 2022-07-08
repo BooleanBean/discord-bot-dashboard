@@ -9,7 +9,11 @@ type Props = {
 
 const GuildStats: FC<Props> = ({ guildId }) => {
     const { data: currentUser, loading, error } = useCurrentUser();
-    const { data: guild, loading: guildLoading, error: guildError } = useBotGuild(guildId);
+    const {
+        data: guild,
+        loading: guildLoading,
+        error: guildError
+    } = useBotGuild(guildId);
 
     if (loading || guildLoading) return <div>loading...</div>;
     if (!currentUser || !guild) return <div>No data</div>;

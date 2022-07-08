@@ -4,8 +4,8 @@ import { APIGuild } from "discord-api-types/v10";
 import Image from "next/image";
 
 import { FC, Fragment, useEffect, useState } from "react";
-import { getGuildIconURL } from "../../../../utils/api";
-import { useGuilds } from "../../../../utils/api/hooks";
+import { getGuildIconURL } from "../../../../../utils/api";
+import { useGuilds } from "../../../../../utils/api/hooks";
 
 type Props = {};
 
@@ -33,7 +33,7 @@ const GuildSwitcher: FC<Props> = () => {
     if (error) return <div>An error occured</div>;
 
     return (
-        <div className="mb-6 px-6">
+        <div className="mb-6">
             <Combobox value={selectedGuild} onChange={setSelectedGuild}>
                 <div className="relative">
                     <div className="relative">
@@ -46,10 +46,13 @@ const GuildSwitcher: FC<Props> = () => {
                         )}
 
                         {!isOpen && (
-                            <div className="w-full flex items-center bg-gray-800 rounded-lg p-4">
+                            <div className="flex items-center bg-gray-800 border border-gray-700 rounded-lg p-2">
                                 <div className="relative h-12 w-12 overflow-hidden rounded-xl">
                                     <Image
-                                        src={getGuildIconURL(selectedGuild.id, selectedGuild.icon)}
+                                        src={getGuildIconURL(
+                                            selectedGuild.id,
+                                            selectedGuild.icon
+                                        )}
                                         blurDataURL="https://seeklogo.com/images/D/discord-icon-new-2021-logo-09772BF096-seeklogo.com.png"
                                         layout="fill"
                                         placeholder="blur"
@@ -57,6 +60,12 @@ const GuildSwitcher: FC<Props> = () => {
                                 </div>
                                 <span className="ml-3 text-sm font-semibold">
                                     {selectedGuild.name}
+                                    <div className="text-xs text-gray-400">
+                                        <span className="text-green-400 text-bold mr-1">
+                                            Online 48205
+                                        </span>
+                                        • 89505
+                                    </div>
                                 </span>
                             </div>
                         )}
@@ -64,7 +73,10 @@ const GuildSwitcher: FC<Props> = () => {
                             onClick={() => setOpen(true)}
                             className="absolute inset-y-0 right-0 flex items-center pr-2"
                         >
-                            <SelectorIcon className="h-5 w-5 text-gray-400" aria-hidden="true" />
+                            <SelectorIcon
+                                className="h-5 w-5 text-gray-400"
+                                aria-hidden="true"
+                            />
                         </Combobox.Button>
                     </div>
                     <Transition
@@ -75,12 +87,12 @@ const GuildSwitcher: FC<Props> = () => {
                         leave="transition duration-75 ease-out"
                         leaveFrom="transform scale-100 opacity-100"
                         leaveTo="transform scale-95 opacity-0"
+                        beforeLeave={() => setOpen(false)}
                         afterLeave={() => {
-                            setOpen(false);
                             setQuery("");
                         }}
                     >
-                        <Combobox.Options className="divide-y cursor-pointer rounded-lg divide-gray-700 absolute bottom-10 mb-3 w-full bg-gray-800 text-white">
+                        <Combobox.Options className="z-10 divide-y cursor-pointer rounded-lg divide-gray-700 absolute top-12 w-full bg-gray-800 text-white">
                             {filteredGuilds.length === 0 && query !== "" ? (
                                 <div className="p-4">Nothing found.</div>
                             ) : (
@@ -94,7 +106,10 @@ const GuildSwitcher: FC<Props> = () => {
                                             <div className="flex items-center">
                                                 <div className="relative h-12 w-12 overflow-hidden rounded-xl">
                                                     <Image
-                                                        src={getGuildIconURL(guild.id, guild.icon)}
+                                                        src={getGuildIconURL(
+                                                            guild.id,
+                                                            guild.icon
+                                                        )}
                                                         blurDataURL="https://seeklogo.com/images/D/discord-icon-new-2021-logo-09772BF096-seeklogo.com.png"
                                                         layout="fill"
                                                         placeholder="blur"
@@ -102,6 +117,12 @@ const GuildSwitcher: FC<Props> = () => {
                                                 </div>
                                                 <span className="ml-3 text-sm font-semibold">
                                                     {guild.name}
+                                                    <div className="text-xs text-gray-400">
+                                                        <span className="text-green-400 text-bold mr-1">
+                                                            Online 48205
+                                                        </span>
+                                                        • 89505
+                                                    </div>
                                                 </span>
                                             </div>
                                         )}

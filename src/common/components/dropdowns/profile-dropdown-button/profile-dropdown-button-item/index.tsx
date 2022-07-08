@@ -1,9 +1,9 @@
 import Link from "next/link";
 import type { FC } from "react";
-import { getIcon, IconsStrings } from "../../../../../utils/icons";
+import { getIcon, IconStrings } from "../../../../../utils/icons";
 
 export type ProfileDropdownButtonItemOptions = {
-    icon?: IconsStrings;
+    icon?: IconStrings;
     text: string;
     href?: string;
     onClick?: () => void;

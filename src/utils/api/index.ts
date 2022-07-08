@@ -13,7 +13,8 @@ export const getGuildIconURL = (id: Snowflake, icon?: string | null) => {
 };
 
 export const getGuildBannerURL = (id: Snowflake, banner?: string | null) => {
-    if (!banner) return `https://exploringbits.com/wp-content/uploads/2022/01/discord-banner-4.gif`;
+    if (!banner)
+        return `https://exploringbits.com/wp-content/uploads/2022/01/discord-banner-4.gif`;
     return `https://cdn.discordapp.com/banners/${id}/${banner}.png`;
 };
 

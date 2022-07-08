@@ -1,7 +1,6 @@
 import { useRouter } from "next/router";
 import { FC } from "react";
-import { NavigationLinksWithCategories } from "../../types";
-import GuildCard from "./guild-card";
+import { NavigationLinksWithCategories } from "../../../types";
 import GuildLink from "./guild-link";
 import GuildSwitcher from "./guild-switcher";
 
@@ -15,12 +14,12 @@ const Sidebar: FC<SidebarProps> = () => {
             items: [
                 {
                     name: "Dashboard",
-                    href: `/app/guilds/${router.query.guildId}`,
+                    href: `/dashboard/guilds/${router.query.guildId}`,
                     icon: "dashboard"
                 },
                 {
                     name: "Statistics",
-                    href: `/app/guilds/${router.query.guildId}/statistics`,
+                    href: `/dashboard/guilds/${router.query.guildId}/statistics`,
                     icon: "chartPie"
                 }
             ]
@@ -30,12 +29,22 @@ const Sidebar: FC<SidebarProps> = () => {
             items: [
                 {
                     name: "Bans",
-                    href: `/app/guilds/${router.query.guildId}/bans`,
+                    href: `/dashboard/guilds/${router.query.guildId}/bans`,
                     icon: "userLeave"
                 },
                 {
+                    name: "Mutes",
+                    href: `/dashboard/guilds/${router.query.guildId}/audit-logs`,
+                    icon: "folderRemove"
+                },
+                {
+                    name: "Warns",
+                    href: `/dashboard/guilds/${router.query.guildId}/audit-logs`,
+                    icon: "folderRemove"
+                },
+                {
                     name: "Audit Logs",
-                    href: `/app/guilds/${router.query.guildId}/audit-logs`,
+                    href: `/dashboard/guilds/${router.query.guildId}/audit-logs`,
                     icon: "folderRemove"
                 }
             ]
@@ -45,7 +54,7 @@ const Sidebar: FC<SidebarProps> = () => {
             items: [
                 {
                     name: "Settings",
-                    href: `/app/guilds/${router.query.guildId}/settings`,
+                    href: `/dashboard/guilds/${router.query.guildId}/settings`,
                     icon: "settings"
                 }
             ]
@@ -53,9 +62,10 @@ const Sidebar: FC<SidebarProps> = () => {
     ];
 
     return (
-        <div className="flex-shrink-0 flex flex-col justify-between w-72 border-r border-gray-700">
+        <div className="overflow-auto flex-shrink-0 flex flex-col justify-between w-72 border-r border-gray-700">
             <div className="px-6 pt-6">
-                <GuildCard />
+                {/* <GuildCard /> */}
+                <GuildSwitcher />
 
                 <nav className="space-y-4">
                     {navigationLinksWithCategories.map(c => (
@@ -72,7 +82,6 @@ const Sidebar: FC<SidebarProps> = () => {
                     ))}
                 </nav>
             </div>
-            <GuildSwitcher />
         </div>
     );
 };
