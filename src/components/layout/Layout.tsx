@@ -1,7 +1,10 @@
-import * as React from 'react';
+import * as React from "react";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-  return <>
-  {/* <Header /> */}
-  {children}</>;
+  return (
+    <>
+      {/* <Header /> */}
+      {children}
+    </>
+  );
 }

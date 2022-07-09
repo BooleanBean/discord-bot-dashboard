@@ -1,7 +1,7 @@
 module.exports = {
-  arrowParens: 'always',
+  arrowParens: "always",
   singleQuote: false,
-  jsxSingleQuote: true,
+  jsxSingleQuote: false,
   tabWidth: 2,
   semi: true,
 };

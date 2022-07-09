@@ -11,14 +11,14 @@ export default function HomePage() {
       <Seo />
 
       <main>
-        <section className='bg-white'>
-          <div className='layout flex min-h-screen flex-col items-center justify-center text-center'>
+        <section className="bg-white">
+          <div className="layout flex min-h-screen flex-col items-center justify-center text-center">
             <h1>Discord Bot Dashboard</h1>
-            <p className='mt-2 text-sm text-gray-800'>
+            <p className="mt-2 text-sm text-gray-800">
               An open source discord bot dashboard with TailwindCSS.
             </p>
-            <p className='mt-2 text-sm text-gray-700'>
-              <ArrowLink href='https://github.com/BooleanBean/discord-bot-dashboard'>
+            <p className="mt-2 text-sm text-gray-700">
+              <ArrowLink href="https://github.com/BooleanBean/discord-bot-dashboard">
                 See the repository
               </ArrowLink>
             </p>

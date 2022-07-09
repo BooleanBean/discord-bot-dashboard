@@ -4,9 +4,9 @@
  */
 module.exports = {
   // !STARTERCONF Change the siteUrl
-  siteUrl: 'http://localhost:3000',
+  siteUrl: "http://localhost:3000",
   generateRobotsTxt: true,
   robotsTxtOptions: {
-    policies: [{ userAgent: '*', allow: '/' }],
+    policies: [{ userAgent: "*", allow: "/" }],
   },
 };
