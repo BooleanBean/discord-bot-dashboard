@@ -5,10 +5,10 @@ const defaultMeta = {
   title: "Open Source Dashboard",
   siteName: "Open Source Dashboard",
   description: "An open source dashboard",
-  url: "http://localhost:3000",
+  url: process.env.NEXT_PUBLIC_DOMAIN,
   type: "website",
   robots: "follow, index",
-  image: "https://tsnext-tw.thcl.dev/images/large-og.png",
+  image: `${process.env.NEXT_PUBLIC_DOMAIN}/favicon/large-og.jpg`,
 };
 
 type SeoProps = {
