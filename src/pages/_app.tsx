@@ -1,9 +1,9 @@
 import { SessionProvider } from "next-auth/react";
 import type { AppProps } from "next/app";
-import Head from "next/head";
 import { ReactElement } from "react";
 import { useDispatch } from "react-redux";
 import "../assets/styles/setup.css";
+import DefaultSeo from "../common/components/seo-nxts/default-seo";
 import type { NextPageWithLayout } from "../common/types";
 import { wrapper } from "../setup";
 import { setHeaderBorder } from "../setup/site-manager";
@@ -26,11 +26,7 @@ const MyApp = ({ Component, pageProps }: AppPropsWithLayout) => {
 
     return (
         <SessionProvider session={pageProps.session}>
-            <Head>
-                <title>Open Source Bot Dashboard</title>
-                <link rel="icon" href="/favicon.ico" />
-                <meta name="description" content="A bot with a beatiful dashboard." />
-            </Head>
+            <DefaultSeo />
 
             <div
                 className="bg-gray-900 text-white w-full h-full"

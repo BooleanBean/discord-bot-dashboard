@@ -34,12 +34,12 @@ const Sidebar: FC<SidebarProps> = () => {
                 },
                 {
                     name: "Mutes",
-                    href: `/dashboard/guilds/${router.query.guildId}/audit-logs`,
+                    href: `/dashboard/guilds/${router.query.guildId}/mutes`,
                     icon: "folderRemove"
                 },
                 {
                     name: "Warns",
-                    href: `/dashboard/guilds/${router.query.guildId}/audit-logs`,
+                    href: `/dashboard/guilds/${router.query.guildId}/warns`,
                     icon: "folderRemove"
                 },
                 {

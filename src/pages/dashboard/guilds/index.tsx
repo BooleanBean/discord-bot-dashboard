@@ -2,6 +2,7 @@ import { APIGuild } from "discord-api-types/v10";
 import { useRouter } from "next/router";
 import GuildBanner from "../../../common/components/guild/guild-banner";
 import GuildIcon from "../../../common/components/guild/guild-icon";
+import Seo from "../../../common/components/seo-nxts/seo";
 import CleanLayout from "../../../common/layouts/CleanLayout";
 import type { NextPageWithLayout } from "../../../common/types";
 import { classNames, sortByName } from "../../../utils";
@@ -23,6 +24,8 @@ const Guilds: NextPageWithLayout = () => {
 
     return (
         <>
+            <Seo title="Select A Guild" />
+
             <h2 className="font-bold text-5xl mb-12 text-center tracking-wider">
                 Select a Guild
             </h2>

@@ -1,10 +1,16 @@
+import Seo from "../common/components/seo-nxts/seo";
 import Layout from "../common/layouts/Layout";
 import { NextPageWithLayout } from "../common/types";
 
 type Props = {};
 
 const Home: NextPageWithLayout<Props> = () => {
-    return <div>under construction</div>;
+    return (
+        <>
+            <Seo title="Home" />
+            <div>under construction</div>
+        </>
+    );
 };
 
 Home.getLayout = page => {

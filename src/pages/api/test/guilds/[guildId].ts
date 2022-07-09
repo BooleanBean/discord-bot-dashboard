@@ -17,12 +17,10 @@ async function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
     if (session) {
         const guild = guilds.find(g => g.id === guildId) ?? null;
 
-        !guild && res.status(404).json({ data: null, status: 404, error: "Bad guild" });
+        if (!guild)
+            return res.status(404).json({ data: null, status: 404, error: "Bad guild" });
 
-        setTimeout(
-            () => res.status(200).json({ data: guild, status: 200, error: null }),
-            3000
-        );
+        res.status(200).json({ data: guild, status: 200, error: null });
     } else {
         res.status(400).json({ data: null, status: 400, error: "Bad session" });
     }
