@@ -2,6 +2,7 @@
     "name": "discord-bot-dashboardd",
     "version": "0.8.0",
     "private": true,
+    "license": "GNU General Public License 3.0",
     "scripts": {
         "dev": "next dev",
         "build": "next build",
