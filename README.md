@@ -1,3 +1,5 @@
+### Development continues on branch [v1](https://github.com/BooleanBean/discord-bot-dashboard/tree/v1)
+
 ## About
 
 An open source discord bot dashboard.
