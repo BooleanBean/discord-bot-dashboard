@@ -12,6 +12,7 @@ export default function HomePage() {
 
       <main>
         <section className="bg-white">
+          <ArrowLink href="/test">Test page</ArrowLink>
           <div className="layout flex min-h-screen flex-col items-center justify-center text-center">
             <h1>Discord Bot Dashboard</h1>
             <p className="mt-2 text-sm text-gray-800">
