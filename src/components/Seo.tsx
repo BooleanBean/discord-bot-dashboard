@@ -2,9 +2,9 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 
 const defaultMeta = {
-  title: "Open Source Dashboard",
-  siteName: "Open Source Dashboard",
-  description: "An open source dashboard",
+  title: "Discord Bot Dashboard",
+  siteName: "Discord Bot Dashboard",
+  description: "A beatiful discord bot dashboard with NextJS and TailwindCSS.",
   url: process.env.NEXT_PUBLIC_DOMAIN,
   type: "website",
   robots: "follow, index",
