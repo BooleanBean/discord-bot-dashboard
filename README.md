@@ -6,4 +6,4 @@
 
 ### License
 
-This project licensed with `GNU General Public License 3.0`.
+This project is licensed under the `GNU General Public License 3.0`
