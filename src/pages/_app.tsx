@@ -9,17 +9,25 @@ import "#/styles/themes.css";
 
 import Seo from "#/components/Seo";
 
+import { NextPageWithLayout } from "#/global-types";
+
 // NProgress
 Router.events.on("routeChangeStart", NProgress.start);
 Router.events.on("routeChangeError", NProgress.done);
 Router.events.on("routeChangeComplete", NProgress.done);
 // NProgress End
 
-function MyApp({ Component, pageProps }: AppProps) {
+type AppPropsWithLayout = AppProps & {
+  Component: NextPageWithLayout;
+};
+
+function MyApp({ Component, pageProps }: AppPropsWithLayout) {
+  const getLayout = Component.getLayout ?? ((page: React.ReactElement) => page);
+
   return (
     <ThemeProvider defaultTheme="dark" attribute="data-theme">
       <Seo />
-      <Component {...pageProps} />
+      {getLayout(<Component {...pageProps} />)}
     </ThemeProvider>
   );
 }

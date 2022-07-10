@@ -2,20 +2,24 @@ import React from "react";
 
 import clsxm from "#/lib/clsxm";
 
-type SelectProps = {
+type Props = {
   itemsList: string[];
   value?: string;
   selectHandler: (event: React.ChangeEvent<HTMLSelectElement>) => void;
 };
 
-const Select: React.FC<SelectProps> = ({ itemsList, value, selectHandler }) => {
+const AccentColorSelect: React.FC<Props> = ({
+  itemsList,
+  value,
+  selectHandler,
+}) => {
   return (
     <select
       name="color"
       id="color"
       value={value}
       className={clsxm(
-        "block max-w-xs rounded text-tw-secondary",
+        "block max-w-xs rounded bg-primary-200 text-tw-secondary",
         "focus:border-primary-400 focus:outline-none focus:ring focus:ring-primary-400"
       )}
       onChange={(event) => selectHandler(event)}
@@ -30,4 +34,4 @@ const Select: React.FC<SelectProps> = ({ itemsList, value, selectHandler }) => {
   );
 };
 
-export default Select;
+export default AccentColorSelect;

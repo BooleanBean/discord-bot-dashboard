@@ -1,16 +1,17 @@
 import * as React from "react";
 
-import Layout from "#/components/layout/Layout";
+import Layout from "#/components/layouts/Layout";
 import ArrowLink from "#/components/links/ArrowLink";
+import ButtonLink from "#/components/links/ButtonLink";
 import Seo from "#/components/Seo";
-import Settings from "#/components/Settings";
 
 export default function HomePage() {
   return (
     <Layout>
       {/* <Seo templateTitle='Home' /> */}
       <Seo />
-      <Settings />
+
+      <ButtonLink href="/settings">Open Settings</ButtonLink>
 
       <main>
         <section>

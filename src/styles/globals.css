@@ -10,6 +10,7 @@
   --primary-medium: theme("colors.gray.200");
   --primary-dark: theme("colors.gray.300");
   --secondary: theme("colors.black");
+  --border: theme("colors.slate.700");
   --tw-color-primary-50: 250, 245, 255;
   --tw-color-primary-100: 243, 232, 255;
   --tw-color-primary-200: 233, 213, 255;
@@ -68,7 +69,11 @@
   html,
   body {
     -webkit-font-smoothing: antialiased;
-    @apply select-none;
+    @apply h-screen min-h-screen select-none;
+  }
+
+  #__next {
+    @apply h-full w-full;
   }
 
   .cursor-newtab {
@@ -102,7 +107,7 @@
 
   body,
   .p {
-    @apply font-primary text-sm md:text-base;
+    @apply font-primary text-xs sm:text-sm md:text-base;
   }
   /* #endregion  /**======== Typography =========== */
 
