@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { ImSpinner2 } from "react-icons/im";
 
 import clsxm from "#/lib/clsxm";
@@ -12,20 +12,22 @@ enum ButtonVariant {
 }
 
 type ButtonProps = {
+  children: React.ReactNode;
   isLoading?: boolean;
-  isDarkBg?: boolean;
   variant?: keyof typeof ButtonVariant;
+  isDarkBg?: boolean;
+  disabled?: boolean;
 } & React.ComponentPropsWithRef<"button">;
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   (
     {
       children,
-      className,
-      disabled: buttonDisabled,
       isLoading,
       variant = "primary",
       isDarkBg = false,
+      disabled: buttonDisabled,
+      className,
       ...rest
     },
     ref
@@ -42,7 +44,6 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
           "focus:outline-none focus-visible:ring focus-visible:ring-primary-500",
           "shadow-sm",
           "transition-colors duration-75",
-          //#region  //*=========== Variants ===========
           [
             variant === "primary" && [
               "bg-primary-500 text-white",
@@ -77,7 +78,6 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
               "hover:bg-gray-800 active:bg-gray-700 disabled:bg-gray-700",
             ],
           ],
-          //#endregion  //*======== Variants ===========
           "disabled:cursor-not-allowed",
           isLoading &&
             "relative text-transparent transition-none hover:text-transparent disabled:cursor-wait",

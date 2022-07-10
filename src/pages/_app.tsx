@@ -1,24 +1,26 @@
 import { AppProps } from "next/app";
 import Router from "next/router";
-import nProgress from "nprogress";
+import { ThemeProvider } from "next-themes";
+import NProgress from "nprogress";
 
 import "#/styles/nprogress.css";
 import "#/styles/globals.css";
-// !STARTERCONF This is for demo purposes, remove #/styles/colors.css import immediately
-import "#/styles/colors.css";
+import "#/styles/themes.css";
 
 import Seo from "#/components/Seo";
 
-Router.events.on("routeChangeStart", nProgress.start);
-Router.events.on("routeChangeError", nProgress.done);
-Router.events.on("routeChangeComplete", nProgress.done);
+// NProgress
+Router.events.on("routeChangeStart", NProgress.start);
+Router.events.on("routeChangeError", NProgress.done);
+Router.events.on("routeChangeComplete", NProgress.done);
+// NProgress End
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <>
+    <ThemeProvider defaultTheme="dark" attribute="data-theme">
       <Seo />
       <Component {...pageProps} />
-    </>
+    </ThemeProvider>
   );
 }
 

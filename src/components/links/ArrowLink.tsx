@@ -1,6 +1,6 @@
-import * as React from "react";
+import React from "react";
 
-import clsxm from "#/lib/clsxm";
+import clsx from "#/lib/clsxm";
 
 import UnderlineLink from "#/components/links/UnderlineLink";
 import { UnstyledLinkProps } from "#/components/links/UnstyledLink";
@@ -13,9 +13,9 @@ type ArrowLinkProps<C extends React.ElementType> = {
 
 export default function ArrowLink<C extends React.ElementType>({
   children,
-  className,
   direction = "right",
   as,
+  className,
   ...rest
 }: ArrowLinkProps<C>) {
   const Component = as || UnderlineLink;
@@ -23,7 +23,7 @@ export default function ArrowLink<C extends React.ElementType>({
   return (
     <Component
       {...rest}
-      className={clsxm(
+      className={clsx(
         "group gap-[0.25em]",
         direction === "left" && "flex-row-reverse",
         className
@@ -36,7 +36,7 @@ export default function ArrowLink<C extends React.ElementType>({
         width="1em"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className={clsxm(
+        className={clsx(
           "relative",
           "transition-transform duration-200",
           direction === "right" ? "motion-safe:-translate-x-1" : "rotate-180",
@@ -52,7 +52,7 @@ export default function ArrowLink<C extends React.ElementType>({
           d="M1.75 8H11"
           strokeWidth="1.5"
           strokeLinecap="round"
-          className={clsxm(
+          className={clsx(
             "origin-left transition-all duration-200",
             "opacity-0 motion-safe:-translate-x-1",
             "group-hover:translate-x-0 group-hover:opacity-100"
