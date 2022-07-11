@@ -4,7 +4,6 @@ import Layout from "#/components/layouts/Layout";
 import ArrowLink from "#/components/links/ArrowLink";
 import ButtonLink from "#/components/links/ButtonLink";
 import Seo from "#/components/Seo";
-import Layout from "#/components/layouts/Layout";
 
 import { NextPageWithLayout } from "#/global-types";
 
