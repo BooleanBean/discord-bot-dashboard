@@ -4,10 +4,13 @@ import Layout from "#/components/layouts/Layout";
 import ArrowLink from "#/components/links/ArrowLink";
 import ButtonLink from "#/components/links/ButtonLink";
 import Seo from "#/components/Seo";
+import Layout from "#/components/layouts/Layout";
 
-export default function HomePage() {
+import { NextPageWithLayout } from "#/global-types";
+
+const Home: NextPageWithLayout = () => {
   return (
-    <Layout>
+    <>
       {/* <Seo templateTitle='Home' /> */}
       <Seo />
 
@@ -29,6 +32,10 @@ export default function HomePage() {
           </div>
         </section>
       </main>
-    </Layout>
+    </>
   );
 }
+
+Home.getLayout = (page) => ((<Layout>{page}</Layout>));
+
+export default Home;
