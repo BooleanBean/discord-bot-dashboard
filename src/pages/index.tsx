@@ -1,7 +1,7 @@
 import Seo from "../common/components/seo-nxts/seo";
 import Layout from "../common/layouts/Layout";
 import { NextPageWithLayout } from "../common/types";
-import UnstyledLink from "../links/unstyled-link";
+import UnstyledLink from "../common/components/links/unstyled-link";
 
 type Props = {};
 
