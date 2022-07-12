@@ -33,8 +33,8 @@ const Home: NextPageWithLayout = () => {
       </main>
     </>
   );
-}
+};
 
-Home.getLayout = (page) => ((<Layout>{page}</Layout>));
+Home.getLayout = (page) => <Layout>{page}</Layout>;
 
 export default Home;
