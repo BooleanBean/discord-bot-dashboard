@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.1](https://github.com/BooleanBean/discord-bot-dashboard/compare/v1.2.0...v1.2.1) (2022-07-12)
+
+
+### Bug Fixes
+
+* duplicate layout import ([8e2e9be](https://github.com/BooleanBean/discord-bot-dashboard/commit/8e2e9be617076276af4a29954b1ffbbf2752dcb8))
+* s ([6829fe6](https://github.com/BooleanBean/discord-bot-dashboard/commit/6829fe6ce8a87a7d198db7abe0a8b27b65d92c80))
+* something to start deploy of site ([de417c2](https://github.com/BooleanBean/discord-bot-dashboard/commit/de417c29240a39d032fe55dc2051e04a0ace6473))
+
 ## [1.2.0](https://github.com/BooleanBean/discord-bot-dashboard/compare/v1.1.0...v1.2.0) (2022-07-12)
 
 
