@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.4.0](https://github.com/BooleanBean/discord-bot-dashboard/compare/v1.3.0...v1.4.0) (2022-07-13)
+
+
+### Features
+
+* implement seo into the page ([0e5344b](https://github.com/BooleanBean/discord-bot-dashboard/commit/0e5344bd947b60b9cafda25dd079c3ed451282f9))
+
 ## [1.3.0](https://github.com/BooleanBean/discord-bot-dashboard/compare/v1.2.1...v1.3.0) (2022-07-13)
 
 

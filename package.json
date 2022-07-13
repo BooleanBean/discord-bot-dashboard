@@ -1,6 +1,6 @@
 {
   "name": "discord-bot-dashboard",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "private": false,
   "license": "AGPL-3.0-or-later",
   "scripts": {
