@@ -2,6 +2,7 @@ import { AppProps } from "next/app";
 import Router from "next/router";
 import { ThemeProvider } from "next-themes";
 import NProgress from "nprogress";
+import { QueryClientProvider } from "react-query";
 
 import "#/styles/nprogress.css";
 import "#/styles/globals.css";
@@ -10,6 +11,7 @@ import "#/styles/themes.css";
 import Seo from "#/components/Seo";
 
 import { NextPageWithLayout } from "#/global-types";
+import { queryClient } from "#/utils/query";
 
 // NProgress
 Router.events.on("routeChangeStart", NProgress.start);
@@ -25,10 +27,12 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   const getLayout = Component.getLayout ?? ((page: React.ReactElement) => page);
 
   return (
-    <ThemeProvider defaultTheme="dark" attribute="data-theme">
-      <Seo />
-      {getLayout(<Component {...pageProps} />)}
-    </ThemeProvider>
+    <QueryClientProvider client={queryClient}>
+      <ThemeProvider defaultTheme="dark" attribute="data-theme">
+        <Seo />
+        {getLayout(<Component {...pageProps} />)}
+      </ThemeProvider>
+    </QueryClientProvider>
   );
 }
 

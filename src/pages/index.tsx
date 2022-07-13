@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useQuery } from "react-query";
 
 import Layout from "#/components/layouts/Layout";
 import ArrowLink from "#/components/links/ArrowLink";
@@ -8,6 +9,12 @@ import Seo from "#/components/Seo";
 import { NextPageWithLayout } from "#/global-types";
 
 const Home: NextPageWithLayout = () => {
+  const { data, isLoading } = useQuery(
+    "users",
+    async () =>
+      await (await fetch("https://jsonplaceholder.typicode.com/users")).json()
+  );
+
   return (
     <>
       {/* <Seo templateTitle='Home' /> */}
@@ -30,6 +37,8 @@ const Home: NextPageWithLayout = () => {
             </p>
           </div>
         </section>
+
+        <section>{isLoading ? "users loading" : JSON.stringify(data)}</section>
       </main>
     </>
   );
