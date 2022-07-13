@@ -17,9 +17,6 @@ const Home: NextPageWithLayout = () => {
 
   return (
     <>
-      {/* <Seo templateTitle='Home' /> */}
-      <Seo />
-
       <ButtonLink href="/settings">Open Settings</ButtonLink>
 
       <main>
@@ -44,6 +41,11 @@ const Home: NextPageWithLayout = () => {
   );
 };
 
-Home.getLayout = (page) => <Layout>{page}</Layout>;
+Home.getLayout = (page) => (
+  <Layout>
+    <Seo />
+    {page}
+  </Layout>
+);
 
 export default Home;
