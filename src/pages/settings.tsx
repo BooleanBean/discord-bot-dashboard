@@ -2,6 +2,7 @@ import { useTheme } from "next-themes";
 
 import AccentColorSelect from "#/components/AccentColorSelect";
 import FixedLayout from "#/components/layouts/FixedLayout";
+import Seo from "#/components/Seo";
 
 import { NextPageWithLayout } from "#/global-types";
 
@@ -100,7 +101,10 @@ const Settings: NextPageWithLayout = () => {
 const colorList = ["indigo", "gray"];
 
 Settings.getLayout = (page) => (
-  <FixedLayout title="Settings">{page}</FixedLayout>
+  <FixedLayout title="Settings">
+    <Seo templateTitle="Settings" />
+    {page}
+  </FixedLayout>
 );
 
 export default Settings;
