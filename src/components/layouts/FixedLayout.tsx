@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 
-import ArrowLink from "#/components/links/ArrowLink";
-import PrimaryLink from "#/components/links/PrimaryLink";
+import BckHeader from "#/components/headers/BckHeader";
 
 type Props = {
   children: React.ReactNode;
@@ -26,23 +25,7 @@ const FixedLayout: React.FC<Props> = ({ children, title }) => {
 
   return (
     <>
-      <div className="sticky top-0 z-10 bg-black bg-opacity-40 backdrop-blur-lg backdrop-filter">
-        <div className="container mx-auto flex h-10 items-center px-2">
-          <ArrowLink as={PrimaryLink} href="/" direction="left">
-            Back to home
-          </ArrowLink>
-          <h4
-            style={{ opacity }}
-            className="mx-auto -translate-x-1/2 transition duration-200"
-          >
-            {title && title}
-          </h4>
-        </div>
-        <div
-          style={{ opacity }}
-          className="absolute bottom-0 h-px w-full bg-tw-border transition-all duration-200"
-        />
-      </div>
+      <BckHeader titleOpacity={opacity} title={title} />
 
       <div className="container relative mx-auto">
         <h1
