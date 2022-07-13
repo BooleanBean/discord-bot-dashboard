@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0](https://github.com/BooleanBean/discord-bot-dashboard/compare/v1.2.1...v1.3.0) (2022-07-13)
+
+
+### Features
+
+* implement react-query ([14d9459](https://github.com/BooleanBean/discord-bot-dashboard/commit/14d9459c0888d5e7c9d6ed3f3eb04af773fbbc1d))
+
+
+### Bug Fixes
+
+* invalid spdx license expression ([6167fd3](https://github.com/BooleanBean/discord-bot-dashboard/commit/6167fd329b229f91834eb3a14176015c89340b13))
+
 ### [1.2.1](https://github.com/BooleanBean/discord-bot-dashboard/compare/v1.2.0...v1.2.1) (2022-07-12)
 
 
