@@ -1,7 +1,6 @@
 import * as React from "react";
 import { RiAlarmWarningFill } from "react-icons/ri";
 
-import Layout from "#/components/layouts/Layout";
 import ArrowLink from "#/components/links/ArrowLink";
 import Seo from "#/components/Seo";
 
@@ -27,11 +26,11 @@ const NotFound: NextPageWithLayout = () => {
 };
 
 NotFound.getLayout = (page) => (
-  <Layout>
+  <>
     <Seo templateTitle="Not Found" />
 
     {page}
-  </Layout>
+  </>
 );
 
 export default NotFound;

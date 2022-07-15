@@ -10,7 +10,7 @@
   --primary-medium: theme("colors.gray.200");
   --primary-dark: theme("colors.gray.300");
   --secondary: theme("colors.black");
-  --border: theme("colors.slate.700");
+  --border: theme("colors.gray.800");
   --tw-color-primary-50: 250, 245, 255;
   --tw-color-primary-100: 243, 232, 255;
   --tw-color-primary-200: 233, 213, 255;
