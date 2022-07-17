@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.5.0](https://github.com/BooleanBean/discord-bot-dashboard/compare/v1.4.0...v1.5.0) (2022-07-17)
+
+
+### Features
+
+* add new layout and implement header ([9d53462](https://github.com/BooleanBean/discord-bot-dashboard/commit/9d534624e90f2e1e5aeef3507c0d4a3383cac2fb))
+* add SECURITY.md file ([f217f41](https://github.com/BooleanBean/discord-bot-dashboard/commit/f217f4106ed53c8237385b0aeda1ac7166a82d96))
+* implement twin.macro ([61a28c1](https://github.com/BooleanBean/discord-bot-dashboard/commit/61a28c16b728d9e2bf483ca1e01ce5f05011c97a))
+
 ## [1.4.0](https://github.com/BooleanBean/discord-bot-dashboard/compare/v1.3.0...v1.4.0) (2022-07-13)
 
 
