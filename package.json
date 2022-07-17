@@ -1,7 +1,6 @@
 {
   "name": "discord-bot-dashboard",
   "version": "1.4.0",
-  "private": false,
   "license": "AGPL-3.0-or-later",
   "scripts": {
     "dev": "next dev",
@@ -67,5 +66,6 @@
     "src/**/*.{json,css,scss,md}": [
       "prettier -w"
     ]
-  }
+  },
+  "packageManager": "yarn@3.2.1"
 }
