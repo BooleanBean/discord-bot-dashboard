@@ -1,7 +1,5 @@
-import Container from "#/components/Container";
+import { Container } from "#/components/ExComponents";
 import Header from "#/components/headers/Header";
-
-import MainTag from "#/tags/MainTag";
 
 type Props = {
   children: React.ReactNode;
@@ -12,7 +10,7 @@ const Layout: React.FC<Props> = ({ children }) => {
     <>
       <Header />
 
-      <Container as={MainTag}>{children}</Container>
+      <Container as="main">{children}</Container>
 
       <footer>footer goes here</footer>
     </>

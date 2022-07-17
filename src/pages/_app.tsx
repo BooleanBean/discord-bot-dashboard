@@ -13,6 +13,8 @@ import Seo from "#/components/Seo";
 import { NextPageWithLayout } from "#/global-types";
 import { queryClient } from "#/utils/query";
 
+import GlobalStyles from "./../components/GlobalStyles";
+
 // NProgress
 Router.events.on("routeChangeStart", NProgress.start);
 Router.events.on("routeChangeError", NProgress.done);
@@ -29,6 +31,7 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   return (
     <QueryClientProvider client={queryClient}>
       <ThemeProvider defaultTheme="dark" attribute="data-theme">
+        <GlobalStyles />
         <Seo />
         {getLayout(<Component {...pageProps} />)}
       </ThemeProvider>

@@ -1,3 +1,6 @@
+import "twin.macro";
+
+import { Container } from "#/components/ExComponents";
 import ArrowLink from "#/components/links/ArrowLink";
 import PrimaryLink from "#/components/links/PrimaryLink";
 
@@ -8,23 +11,25 @@ type Props = {
 
 const BckHeader: React.FC<Props> = ({ title, titleOpacity }) => {
   return (
-    <div className="sticky top-0 z-10 bg-black bg-opacity-40 backdrop-blur-lg backdrop-filter">
-      <div className="container mx-auto flex h-14 items-center px-2">
-        <ArrowLink as={PrimaryLink} href="/" direction="left">
-          Back to home
-        </ArrowLink>
+    <header className="sticky top-0 z-10 bg-black bg-opacity-40 backdrop-blur-lg backdrop-filter">
+      <Container tw="relative flex h-14 items-center px-2">
+        <div tw="z-10">
+          <ArrowLink as={PrimaryLink} href="/" direction="left">
+            Back to home
+          </ArrowLink>
+        </div>
         <h4
           style={{ opacity: titleOpacity }}
-          className="mx-auto -translate-x-1/2 transition duration-200"
+          tw="absolute left-0 right-0 text-center -translate-x-1/2 transition duration-200"
         >
           {title && title}
         </h4>
-      </div>
+      </Container>
       <div
         style={{ opacity: titleOpacity }}
-        className="absolute bottom-0 h-px w-full bg-tw-border transition-all duration-200"
+        tw="absolute bottom-0 h-px w-full bg-tw-border transition-all duration-200"
       />
-    </div>
+    </header>
   );
 };
 

@@ -3,7 +3,9 @@ module.exports = {
   eslint: {
     dirs: ["src"],
   },
-
+  experimental: {
+    forceSwcTransforms: true,
+  },
   reactStrictMode: true,
 
   // Uncoment to add domain whitelist

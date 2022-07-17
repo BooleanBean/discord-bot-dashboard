@@ -2,37 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: theme("colors.black");
-  --background-secondary: theme("colors.gray.800");
-  --primary: theme("colors.white");
-  --primary-light: theme("colors.gray.100");
-  --primary-medium: theme("colors.gray.200");
-  --primary-dark: theme("colors.gray.300");
-  --secondary: theme("colors.black");
-  --border: theme("colors.gray.800");
-  --tw-color-primary-50: 250, 245, 255;
-  --tw-color-primary-100: 243, 232, 255;
-  --tw-color-primary-200: 233, 213, 255;
-  --tw-color-primary-300: 216, 180, 254;
-  --tw-color-primary-400: 192, 132, 252;
-  --tw-color-primary-500: 168, 85, 247;
-  --tw-color-primary-600: 147, 51, 234;
-  --tw-color-primary-700: 126, 34, 206;
-  --tw-color-primary-800: 107, 33, 168;
-  --tw-color-primary-900: 88, 28, 135;
-  --color-primary-50: rgb(var(--tw-color-primary-50)); /* #faf5ff */
-  --color-primary-100: rgb(var(--tw-color-primary-100)); /* #f3e8ff */
-  --color-primary-200: rgb(var(--tw-color-primary-200)); /* #e9d5ff */
-  --color-primary-300: rgb(var(--tw-color-primary-300)); /* #d8b4fe */
-  --color-primary-400: rgb(var(--tw-color-primary-400)); /* #c084fc */
-  --color-primary-500: rgb(var(--tw-color-primary-500)); /* #a855f7 */
-  --color-primary-600: rgb(var(--tw-color-primary-600)); /* #9333ea */
-  --color-primary-700: rgb(var(--tw-color-primary-700)); /* #7e22ce */
-  --color-primary-800: rgb(var(--tw-color-primary-800)); /* #6b21a8 */
-  --color-primary-900: rgb(var(--tw-color-primary-900)); /* #581c87 */
-}
-
 /* [data-theme*='light'] {
   --background: theme('colors.white');
   --background-secondary: theme('colors.gray.200');
@@ -66,20 +35,6 @@
       U+2215, U+FEFF, U+FFFD;
   }
 
-  html,
-  body {
-    -webkit-font-smoothing: antialiased;
-    @apply h-screen min-h-screen select-none;
-  }
-
-  #__next {
-    @apply h-full w-full;
-  }
-
-  .cursor-newtab {
-    cursor: url("/images/new-tab.png") 10 10, pointer;
-  }
-
   /* #region  /**=========== Typography =========== */
   .h0 {
     @apply font-primary text-3xl font-bold md:text-5xl;
@@ -111,19 +66,8 @@
   }
   /* #endregion  /**======== Typography =========== */
 
-  .layout {
-    /* 1100px */
-    max-width: 68.75rem;
-    @apply mx-auto w-11/12;
-  }
-
   .bg-dark a.custom-link {
     @apply border-gray-200 hover:border-gray-200/0;
-  }
-
-  /* Class to adjust with sticky footer */
-  .min-h-main {
-    @apply min-h-[calc(100vh-56px)];
   }
 }
 
