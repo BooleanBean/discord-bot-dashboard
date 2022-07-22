@@ -1,42 +1,58 @@
 import { AppProps } from "next/app";
-import Router from "next/router";
+import Router, { useRouter } from "next/router";
+import { SessionProvider } from "next-auth/react";
 import { ThemeProvider } from "next-themes";
-import NProgress from "nprogress";
+import nProgress from "nprogress";
+import React, { useEffect } from "react";
 import { QueryClientProvider } from "react-query";
 
-import "#/styles/nprogress.css";
-import "#/styles/globals.css";
-import "#/styles/themes.css";
+import "#/lib/styles/nprogress.css";
+import "#/lib/styles/globals.css";
+import "#/lib/styles/themes.css";
 
-import Seo from "#/components/Seo";
+import Seo from "#/lib/components/Seo";
 
 import { NextPageWithLayout } from "#/global-types";
 import { queryClient } from "#/utils/query";
 
-import GlobalStyles from "./../components/GlobalStyles";
+import GlobalStyles from "../lib/components/GlobalStyles";
 
-// NProgress
-Router.events.on("routeChangeStart", NProgress.start);
-Router.events.on("routeChangeError", NProgress.done);
-Router.events.on("routeChangeComplete", NProgress.done);
-// NProgress End
+// nProgress start
+Router.events.on("routeChangeStart", nProgress.start);
+Router.events.on("routeChangeError", nProgress.done);
+Router.events.on("routeChangeComplete", nProgress.done);
+// nProgress end
 
 type AppPropsWithLayout = AppProps & {
-  Component: NextPageWithLayout;
+   Component: NextPageWithLayout;
 };
 
-function MyApp({ Component, pageProps }: AppPropsWithLayout) {
-  const getLayout = Component.getLayout ?? ((page: React.ReactElement) => page);
+export default function MyApp({
+   Component,
+   pageProps: { session, ...pageProps },
+}: AppPropsWithLayout) {
+   const getLayout = Component.getLayout ?? ((page: React.ReactElement) => page);
+   const router = useRouter();
 
-  return (
-    <QueryClientProvider client={queryClient}>
-      <ThemeProvider defaultTheme="dark" attribute="data-theme">
-        <GlobalStyles />
-        <Seo />
-        {getLayout(<Component {...pageProps} />)}
-      </ThemeProvider>
-    </QueryClientProvider>
-  );
+   useEffect(() => {
+      window.addEventListener("storage", (e: StorageEvent) => {
+         if (e.key === "redirect" && e.newValue) {
+            setTimeout(() => router.push(e.newValue as string), 1 * 1000);
+            localStorage.removeItem("redirect");
+         }
+      });
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+   }, []);
+
+   return (
+      <SessionProvider session={session}>
+         <QueryClientProvider client={queryClient}>
+            <ThemeProvider defaultTheme="dark" attribute="data-theme">
+               <GlobalStyles />
+               <Seo />
+               {getLayout(<Component {...pageProps} />)}
+            </ThemeProvider>
+         </QueryClientProvider>
+      </SessionProvider>
+   );
 }
-
-export default MyApp;

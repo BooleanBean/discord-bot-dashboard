@@ -1,19 +1,20 @@
 {
-  "css.validate": false,
-  "editor.formatOnSave": true,
-  "editor.tabSize": 2,
-  "editor.codeActionsOnSave": {
-    "source.fixAll": true
-  },
-  "files.exclude": {
-    "**/.git": true,
-    "**/.svn": true,
-    "**/.hg": true,
-    "**/CVS": true,
-    "**/.DS_Store": true,
-    "**/Thumbs.db": true,
-    "**/node_modules": true
-  },
-  "headwind.runOnSave": false,
-  "typescript.preferences.importModuleSpecifier": "non-relative"
+   "css.validate": false,
+   "editor.formatOnSave": true,
+   "editor.tabSize": 3,
+   "editor.codeActionsOnSave": {
+      "source.fixAll": true
+   },
+   "files.exclude": {
+      "**/.git": true,
+      "**/.svn": true,
+      "**/.hg": true,
+      "**/CVS": true,
+      "**/.DS_Store": true,
+      "**/Thumbs.db": true,
+      "**/node_modules": true,
+      "**/.idea": true
+   },
+   "headwind.runOnSave": false,
+   "typescript.preferences.importModuleSpecifier": "non-relative"
 }
