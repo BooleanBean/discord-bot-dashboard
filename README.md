@@ -12,7 +12,7 @@
 -  Run `yarn install` or `yarn` command to start installing dependencies.
 
    -  While installing dependencies let's setup environment keys.
-      1. Rename `.env.development.example` to `.env.development`.
+      1. Rename `.env.development.example` to `.env.development.local`.
       2. Setup `NEXT_PUBLIC_DOMAIN`:
          -  Value: `http://localhost:3000`
       3. Setup `NEXTAUTH_URL`:
@@ -42,7 +42,7 @@
 -  Clone the repo.
 -  Run `yarn install` or `yarn` command to start installing dependencies.
    -  While installing dependencies let's setup environment keys.
-      1. Rename `.env.production.example` to `.env.production`.
+      1. Rename `.env.production.example` to `.env.production.local`.
       2. Setup `NEXT_PUBLIC_DOMAIN`:
          -  Value: `https://<domain>.com`
       3. Setup `NEXTAUTH_URL`:
