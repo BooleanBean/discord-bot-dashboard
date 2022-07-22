@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.6.0](https://github.com/BooleanBean/discord-bot-dashboard/compare/v1.5.0...v1.6.0) (2022-07-22)
+
+
+### Features
+
+* implement next-auth ([2bbdc0d](https://github.com/BooleanBean/discord-bot-dashboard/commit/2bbdc0d6d70484001b21471cb85c7563c964ba13))
+* implemn next-auth ([2c2ce54](https://github.com/BooleanBean/discord-bot-dashboard/commit/2c2ce542f8b2b7edaea1e185789f61912e194ee2))
+
 ## [1.5.0](https://github.com/BooleanBean/discord-bot-dashboard/compare/v1.4.0...v1.5.0) (2022-07-17)
 
 
