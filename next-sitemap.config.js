@@ -3,7 +3,7 @@
  * @see https://github.com/iamvishnusankar/next-sitemap#readme
  */
 module.exports = {
-   siteUrl: "http://localhost:3000",
+   siteUrl: "https://dc.booleanbean.tk",
    generateRobotsTxt: true,
    robotsTxtOptions: {
       policies: [{ userAgent: "*", allow: "/" }],

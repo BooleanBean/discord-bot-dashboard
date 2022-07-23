@@ -38,7 +38,6 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
             ref={ref}
             type="button"
             disabled={disabled}
-            // TODO: fix type error
             css={[
                twM`inline-flex items-center rounded px-4 py-2 font-semibold shadow-sm transition-colors duration-200 ease-out disabled:cursor-not-allowed`,
                // variants start
@@ -62,7 +61,6 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
          >
             {isLoading && (
                <div
-                  // TODO: fix type error
                   css={[
                      twM`absolute`,
                      ["primary", "dark"].includes(variant) && twM`text-white`,
