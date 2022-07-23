@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.6.1](https://github.com/BooleanBean/discord-bot-dashboard/compare/v1.6.0...v1.6.1) (2022-07-23)
+
+
+### Bug Fixes
+
+* **types:** unknown `css` type in dom elements ([ec81ee0](https://github.com/BooleanBean/discord-bot-dashboard/commit/ec81ee03c5a46293ab816b9aa58d3c5ab302cbf4))
+
 ## [1.6.0](https://github.com/BooleanBean/discord-bot-dashboard/compare/v1.5.0...v1.6.0) (2022-07-22)
 
 
