@@ -1,5 +1,6 @@
 import { signOut, useSession } from "next-auth/react";
 import React, { useEffect, useState } from "react";
+import { MdSpaceDashboard } from "react-icons/md";
 import "twin.macro";
 
 import Button from "#/lib/components/buttons/Button";
@@ -31,16 +32,17 @@ const Header: React.FC<Props> = () => {
                   Discord Bot
                </UnstyledLink>
 
-               <nav tw="ml-10 hidden space-x-4 lg:flex lg:items-center">
-                  <PrimaryLink href="/settings">Settings</PrimaryLink>
-                  <PrimaryLink href="/settings">Settings</PrimaryLink>
+               <nav tw="ml-8 hidden space-x-4 lg:flex lg:items-center text-lg">
+                  <PrimaryLink href="/settings">Docs</PrimaryLink>
                   <PrimaryLink href="/settings">Settings</PrimaryLink>
                </nav>
             </div>
             <div tw="flex h-full items-center space-x-4">
                {session?.user && (
                   <>
-                     <PrimaryLink href="/dashboard/guilds">Dashboard</PrimaryLink>
+                     <PrimaryLink tw="text-lg" href="/dashboard/guilds">
+                        <MdSpaceDashboard tw="w-8 h-8" />
+                     </PrimaryLink>
                      <Button onClick={handleLogout}>Logout</Button>
                   </>
                )}

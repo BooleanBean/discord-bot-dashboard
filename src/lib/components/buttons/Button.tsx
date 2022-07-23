@@ -39,7 +39,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
             type="button"
             disabled={disabled}
             css={[
-               twM`inline-flex items-center rounded px-4 py-2 font-semibold shadow-sm transition-colors duration-200 ease-out disabled:cursor-not-allowed`,
+               twM`inline-flex items-center rounded-lg px-4 py-2 font-semibold shadow-sm transition-colors duration-200 ease-out disabled:cursor-not-allowed`,
                // variants start
                variant === "primary" &&
                   twM`bg-primary-500 text-white border border-primary-600 hover:bg-primary-600 hover:text-white active:bg-primary-500 disabled:bg-primary-400 disabled:hover:bg-primary-400`,

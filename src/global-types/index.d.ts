@@ -2,6 +2,13 @@ import { NextPage } from "next";
 import styledImport, { css as cssImport, CSSProp } from "styled-components";
 import "twin.macro";
 
+// TODO: extend it with our API
+export interface Guild {
+   id: string;
+   name: string;
+   // ...
+}
+
 export type NextPageWithLayout<P = Record<string, unknown>> = NextPage<P> & {
    /**
     * Render the page in the provided layout.

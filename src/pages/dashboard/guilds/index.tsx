@@ -1,20 +1,17 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useQuery } from "react-query";
 import "twin.macro";
 
 import FixedLayout from "#/lib/components/layouts/FixedLayout";
 import ButtonLink from "#/lib/components/links/ButtonLink";
 
 import { NextPageWithLayout } from "#/global-types";
+import { useUserGuilds } from "#/utils/query";
 
 const Guilds: NextPageWithLayout = () => {
-   // TODO: add types
-   const { data: guilds, isLoading } = useQuery(
-      "guilds",
-      async () => await (await fetch("https://jsonplaceholder.typicode.com/users")).json()
-   );
+   const { data: guilds, isLoading } = useUserGuilds();
 
-   if (isLoading) return <section>Guilds loading... Take a minute</section>;
+   if (!guilds?.length || isLoading)
+      return <section>Guilds loading... Take a minute</section>;
 
    return (
       <section tw="mb-10 grid grid-cols-1 lg:grid-cols-3 2xl:grid-cols-4 gap-8">

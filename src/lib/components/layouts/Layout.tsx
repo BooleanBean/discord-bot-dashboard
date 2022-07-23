@@ -1,5 +1,6 @@
 import React from "react";
 
+import Footer from "#/lib/components/Footer";
 import Header from "#/lib/components/headers/Header";
 import { Container } from "#/lib/components/StyledComponents";
 
@@ -14,7 +15,7 @@ const Layout: React.FC<Props> = ({ children }) => {
 
          <Container as="main">{children}</Container>
 
-         <footer>footer goes here</footer>
+         <Footer />
       </>
    );
 };
