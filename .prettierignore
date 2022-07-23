@@ -20,6 +20,8 @@
 # misc
 .DS_Store
 *.pem
+/.hidden
+/.idea 
 
 # debug
 npm-debug.log*
