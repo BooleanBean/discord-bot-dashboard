@@ -1,5 +1,5 @@
 import { AppProps } from "next/app";
-import Router, { useRouter } from "next/router";
+import Router from "next/router";
 import { SessionProvider } from "next-auth/react";
 import { ThemeProvider } from "next-themes";
 import nProgress from "nprogress";
@@ -29,10 +29,10 @@ type AppPropsWithLayout = AppProps & {
 
 export default function MyApp({
    Component,
+   router,
    pageProps: { session, ...pageProps },
 }: AppPropsWithLayout) {
    const getLayout = Component.getLayout ?? ((page: React.ReactElement) => page);
-   const router = useRouter();
 
    useEffect(() => {
       window.addEventListener("storage", (e: StorageEvent) => {
@@ -50,6 +50,7 @@ export default function MyApp({
             <ThemeProvider defaultTheme="dark" attribute="data-theme">
                <GlobalStyles />
                <Seo />
+
                {getLayout(<Component {...pageProps} />)}
             </ThemeProvider>
          </QueryClientProvider>

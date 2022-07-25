@@ -1,9 +1,12 @@
-import { NextPage } from "next";
 import { useRouter } from "next/router";
 
+import DashboardLayout from "#/lib/components/layouts/DashboardLayout";
 import ArrowLink from "#/lib/components/links/ArrowLink";
+import Seo from "#/lib/components/Seo";
 
-const Guild: NextPage = () => {
+import { NextPageWithLayout } from "#/global-types";
+
+const Guild: NextPageWithLayout = () => {
    const router = useRouter();
 
    return (
@@ -13,5 +16,12 @@ const Guild: NextPage = () => {
       </div>
    );
 };
+
+Guild.getLayout = (page) => (
+   <DashboardLayout>
+      <Seo templateTitle="Guild" />
+      {page}
+   </DashboardLayout>
+);
 
 export default Guild;
