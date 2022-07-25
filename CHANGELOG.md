@@ -4,7 +4,6 @@ All notable changes to this project will be documented in this file. See [standa
 
 ## [1.7.0](https://github.com/BooleanBean/discord-bot-dashboard/compare/discord-bot-dashboard-v1.6.1...discord-bot-dashboard-v1.7.0) (2022-07-23)
 
-
 ### Features
 
 * add license ([f8795a4](https://github.com/BooleanBean/discord-bot-dashboard/commit/f8795a40e11a104d2316da08f4695afa18b33a24))
