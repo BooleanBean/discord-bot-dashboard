@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.7.0](https://github.com/BooleanBean/discord-bot-dashboard/compare/v1.6.3...v1.7.0) (2022-07-25)
+
+
+### Features
+
+* change buttons font to medium ([02545d7](https://github.com/BooleanBean/discord-bot-dashboard/commit/02545d7ca2b238c8a95bf12fc735d8e19c201efb))
+
 ## [1.6.3](https://github.com/BooleanBean/discord-bot-dashboard/compare/v1.6.2...v1.6.3) (2022-07-25)
 
 
