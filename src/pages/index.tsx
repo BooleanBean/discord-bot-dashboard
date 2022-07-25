@@ -10,7 +10,7 @@ import { NextPageWithLayout } from "#/global-types";
 const Home: NextPageWithLayout = () => {
    return (
       <>
-         <section id="header">
+         <section id="hero">
             <div tw="flex min-h-screen flex-col items-center justify-center text-center">
                <h1>Discord Bot Dashboard</h1>
                <p tw="mt-2 text-sm text-tw-primary-dark">
