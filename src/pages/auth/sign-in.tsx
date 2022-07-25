@@ -30,14 +30,22 @@ export default function SignIn({ provider }: Props) {
 
    return (
       <div tw="flex min-h-screen flex-col items-center justify-center text-center">
-         {status === "authenticated" ? (
+         {status === "authenticated" && (
             <span tw="uppercase text-lg font-bold text-gray-500">Done!</span>
-         ) : (
+         )}
+
+         {status === "loading" && (
             <>
-               {/* // TODO: when authenticated, it shows the redirect for a second, so stop showing it to improve the visual*/}
+               <ImSpinner3 size={40} tw="animate-spin text-gray-600" />
+               <span tw="mt-3 uppercase text-lg font-bold text-gray-500">Loading...</span>
+            </>
+         )}
+
+         {status === "unauthenticated" && (
+            <>
                <ImSpinner3 size={40} tw="animate-spin text-gray-600" />
                <span tw="mt-3 uppercase text-lg font-bold text-gray-500">
-                  Redirecting
+                  Redirecting...
                </span>
             </>
          )}
