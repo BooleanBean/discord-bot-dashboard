@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.10.0](https://github.com/BooleanBean/discord-bot-dashboard/compare/v1.9.0...v1.10.0) (2022-07-25)
+
+
+### Features
+
+* **page:** add  new pages ([fa84f0a](https://github.com/BooleanBean/discord-bot-dashboard/commit/fa84f0aa5219fe3494f37fd7eb8b2c14745e134a))
+
 ## [1.9.0](https://github.com/BooleanBean/discord-bot-dashboard/compare/v1.8.0...v1.9.0) (2022-07-25)
 
 
