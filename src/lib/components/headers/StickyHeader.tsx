@@ -28,7 +28,7 @@ const StickyHeader: React.FC<Props> = ({ title, titleOpacity }) => {
          </Container>
          <hr
             style={{ opacity: titleOpacity }}
-            tw="absolute bottom-0 h-px w-full border-gray-800 transition-all duration-200"
+            tw="absolute bottom-0 h-px w-full border-tw-border transition-all duration-200"
          />
       </header>
    );

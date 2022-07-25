@@ -42,7 +42,7 @@ const FixedLayout: React.FC<Props> = ({ children, title }) => {
                {title}
             </h1>
 
-            <hr tw="border-gray-800 my-10" />
+            <hr tw="border-tw-border my-10" />
             <FadeInUpTransition in>{children}</FadeInUpTransition>
          </Container>
       </>

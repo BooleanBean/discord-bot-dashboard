@@ -26,7 +26,7 @@ export default function Footer() {
                </div>
             </div>
 
-            <hr tw="border-gray-800 my-12" />
+            <hr tw="border-tw-border my-12" />
 
             <div tw="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
                <FooterNavigation
