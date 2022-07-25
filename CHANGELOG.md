@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.8.0](https://github.com/BooleanBean/discord-bot-dashboard/compare/v1.7.0...v1.8.0) (2022-07-25)
+
+
+### Features
+
+* new background colors ([b8e3ca7](https://github.com/BooleanBean/discord-bot-dashboard/commit/b8e3ca73a432bd08cd7d4cb2549174c78276ad3c))
+
 ## [1.7.0](https://github.com/BooleanBean/discord-bot-dashboard/compare/v1.6.3...v1.7.0) (2022-07-25)
 
 
