@@ -1,6 +1,7 @@
 import { BsDiscord, BsGithub, BsInstagram } from "react-icons/bs";
 import "twin.macro";
 
+import UnstyledLink from "#components/links/UnstyledLink";
 import { Container } from "#components/StyledComponents";
 
 import FooterIcon from "./FooterIcon";
@@ -11,7 +12,9 @@ export default function Footer() {
       <footer tw="bg-tw-background-secondary">
          <Container tw="py-16">
             <div tw="sm:flex sm:items-center sm:justify-between">
-               <h3>Discord Bot</h3>
+               <UnstyledLink href="/">
+                  <h3>Discord Bot</h3>
+               </UnstyledLink>
 
                <div tw="mt-6 flex space-x-6 sm:mt-0">
                   <FooterIcon href="/" icon={<BsInstagram tw="h-6 w-6" />}>
@@ -20,7 +23,10 @@ export default function Footer() {
                   <FooterIcon href="/" icon={<BsDiscord tw="h-6 w-6" />}>
                      Discord
                   </FooterIcon>
-                  <FooterIcon href="/" icon={<BsGithub tw="h-6 w-6" />}>
+                  <FooterIcon
+                     href="https://github.com/BooleanBean/discord-bot-dashboard"
+                     icon={<BsGithub tw="h-6 w-6" />}
+                  >
                      Github
                   </FooterIcon>
                </div>

@@ -14,7 +14,7 @@ const HelpCenter: NextPageWithLayout = () => {
             type="search"
             name="Search"
             placeholder="Type something to search..."
-            tw="my-8 w-full lg:w-1/2 rounded-lg border-0 bg-tw-background-secondary font-semibold text-tw-primary-light focus:border-2 focus:border-primary-500 focus:ring-0"
+            tw="my-8 w-full lg:w-1/2 rounded-lg border-transparent bg-tw-background-secondary font-semibold text-tw-primary-light focus:border-2 focus:border-primary-500 focus:ring-0"
          />
          <div tw="flex w-full flex-col divide-y divide-tw-border sm:flex-row sm:divide-y-0 sm:divide-x sm:px-8 lg:px-12 xl:px-32">
             <div tw="flex w-full flex-col divide-y divide-tw-border">
