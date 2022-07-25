@@ -32,7 +32,7 @@ export default function Footer() {
                <FooterNavigation
                   category="Company"
                   items={[
-                     { href: "/about", children: "About" },
+                     { href: "/about-us", children: "About Us" },
                      { href: "/meet-the-team", children: "Meet the Team" },
                      { href: "/history", children: "History" },
                   ]}

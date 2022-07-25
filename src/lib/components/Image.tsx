@@ -1,9 +1,9 @@
-import Image, { ImageProps } from "next/image";
+import NextImage, { ImageProps } from "next/image";
 import * as React from "react";
 
 import clsxm from "#/lib/clsxm";
 
-type NextImageProps = {
+type Props = {
    useSkeleton?: boolean;
    imgClassName?: string;
    blurClassName?: string;
@@ -18,7 +18,7 @@ type NextImageProps = {
 /**
  * TODO: refactor to twin.macro
  */
-export default function NextImage({
+export default function Image({
    useSkeleton = false,
    src,
    width,
@@ -28,7 +28,7 @@ export default function NextImage({
    imgClassName,
    blurClassName,
    ...rest
-}: NextImageProps) {
+}: Props) {
    const [status, setStatus] = React.useState(useSkeleton ? "loading" : "complete");
    const widthIsSet = className?.includes("w-") ?? false;
 
@@ -37,7 +37,7 @@ export default function NextImage({
          style={!widthIsSet ? { width: `${width}px` } : undefined}
          className={className}
       >
-         <Image
+         <NextImage
             className={clsxm(
                imgClassName,
                status === "loading" && clsxm("animate-pulse", blurClassName)

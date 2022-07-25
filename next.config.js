@@ -8,11 +8,9 @@ module.exports = {
    },
    reactStrictMode: true,
 
-   // images: {
-   //   domains: [
-   //     'res.cloudinary.com',
-   //   ],
-   // },
+   images: {
+      domains: ["dummyimage.com"],
+   },
 
    // SVGR
    webpack(config) {
