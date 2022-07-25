@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.6.3](https://github.com/BooleanBean/discord-bot-dashboard/compare/v1.6.2...v1.6.3) (2022-07-25)
+
+
+### Bug Fixes
+
+* set loading state to true to improve visuality ([fe8aaee](https://github.com/BooleanBean/discord-bot-dashboard/commit/fe8aaeed1e23e38e71f7c4c6ed15cf36374e0799))
+
 ## [1.6.2](https://github.com/BooleanBean/discord-bot-dashboard/compare/v1.6.1...v1.6.2) (2022-07-25)
 
 
