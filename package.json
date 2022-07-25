@@ -17,7 +17,7 @@
       "release": "release-please",
       "push-release": "git push --follow-tags origin v1",
       "postbuild": "next-sitemap --config next-sitemap.config.js",
-      "prepare": "husky install"
+      "postinstall": "husky install"
    },
    "dependencies": {
       "clsx": "^1.1.1",
