@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.6.1](https://github.com/BooleanBean/discord-bot-dashboard/compare/v1.6.0...v1.6.1) (2022-07-25)
+
+
+### Bug Fixes
+
+* rename React to * as React ([57fd42c](https://github.com/BooleanBean/discord-bot-dashboard/commit/57fd42cf1ea6e00ab111b18f99f9ba12e1902061))
+
+
+### Performance Improvements
+
+* clear timeouts if components unmounted ([e74bafe](https://github.com/BooleanBean/discord-bot-dashboard/commit/e74bafe95d42582e93bd89c9daf408b0615aa1ae))
+
 ## [1.6.0](https://github.com/BooleanBean/discord-bot-dashboard/compare/v1.5.0...v1.6.0) (2022-07-25)
 
 
