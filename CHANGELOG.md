@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.6.2](https://github.com/BooleanBean/discord-bot-dashboard/compare/v1.6.1...v1.6.2) (2022-07-25)
+
+
+### Bug Fixes
+
+* **auth:** when authenticated in sign-in page redirecting text still showing ([542390f](https://github.com/BooleanBean/discord-bot-dashboard/commit/542390f9157ab438c57b4d7f3ade0fc51ae3af45))
+* **manifest:** invalid icon paths ([93fb351](https://github.com/BooleanBean/discord-bot-dashboard/commit/93fb351258c712bb0dd2a6a8143171156c7c622d))
+
 ## [1.6.1](https://github.com/BooleanBean/discord-bot-dashboard/compare/v1.6.0...v1.6.1) (2022-07-25)
 
 
