@@ -14,9 +14,10 @@ type Props = Record<string, unknown>;
 
 const Header: React.FC<Props> = () => {
    const { data: session, status } = useSession();
-   const [loading, setLoading] = useState<boolean>(false);
+   const [loading, setLoading] = useState<boolean>(true);
 
    useEffect(() => {
+      // TODO: with context
       if (status === "loading") setLoading(true);
       else if (status === "authenticated") setLoading(false);
       else setLoading(false);
