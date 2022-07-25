@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+import { ImSpinner3 } from "react-icons/im";
 import "twin.macro";
 
 import FixedLayout from "#/lib/components/layouts/FixedLayout";
@@ -11,14 +11,13 @@ const Guilds: NextPageWithLayout = () => {
    const { data: guilds, isLoading } = useUserGuilds();
 
    if (!guilds?.length || isLoading)
-      return <section>Guilds loading... Take a minute</section>;
+      return <ImSpinner3 tw="animate-spin w-8 h-8 text-white" />;
 
    return (
       <section tw="mb-10 grid grid-cols-1 lg:grid-cols-3 2xl:grid-cols-4 gap-8">
-         {/* <pre>{JSON.stringify(guilds, null, 2)}</pre> */}
-         {[...guilds, ...guilds, ...guilds].map((guild: any, i) => (
+         {guilds.map((guild) => (
             <div
-               key={i} // use guild.id
+               key={guild.id}
                tw="p-8 bg-tw-secondary w-full h-56 rounded-lg border border-gray-800"
             >
                {guild.id}

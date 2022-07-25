@@ -130,54 +130,6 @@ const Settings: NextPageWithLayout = () => {
                   onSelect={handleAccentColorSelect}
                />
             </div>
-            <div>
-               <h2>Theme</h2>
-               <p tw="mt-2 mb-6 text-tw-primary-dark">
-                  Don&apos;t like the theme? No problem, you can select a suitable theme
-                  below!
-               </p>
-               <AccentColorSelect
-                  options={colors}
-                  value={accentColor}
-                  onSelect={handleAccentColorSelect}
-               />
-            </div>
-            <div>
-               <h2>Theme</h2>
-               <p tw="mt-2 mb-6 text-tw-primary-dark">
-                  Don&apos;t like the theme? No problem, you can select a suitable theme
-                  below!
-               </p>
-               <AccentColorSelect
-                  options={colors}
-                  value={accentColor}
-                  onSelect={handleAccentColorSelect}
-               />
-            </div>
-            <div>
-               <h2>Theme</h2>
-               <p tw="mt-2 mb-6 text-tw-primary-dark">
-                  Don&apos;t like the theme? No problem, you can select a suitable theme
-                  below!
-               </p>
-               <AccentColorSelect
-                  options={colors}
-                  value={accentColor}
-                  onSelect={handleAccentColorSelect}
-               />
-            </div>
-            <div>
-               <h2>Theme</h2>
-               <p tw="mt-2 mb-6 text-tw-primary-dark">
-                  Don&apos;t like the theme? No problem, you can select a suitable theme
-                  below!
-               </p>
-               <AccentColorSelect
-                  options={colors}
-                  value={accentColor}
-                  onSelect={handleAccentColorSelect}
-               />
-            </div>
          </div>
       </>
    );

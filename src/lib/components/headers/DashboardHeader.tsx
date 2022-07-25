@@ -8,8 +8,8 @@ type Props = Record<string, unknown>;
 // TODO:
 const DashboardHeader: React.FC<Props> = () => {
    return (
-      <header tw="bg-tw-secondary">
-         <Container tw="flex h-16 items-center px-2">dashboard header</Container>
+      <header tw="bg-tw-secondary border-b border-gray-800">
+         <Container tw="flex h-14 items-center">dashboard header</Container>
       </header>
    );
 };

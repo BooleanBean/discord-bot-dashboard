@@ -13,9 +13,9 @@ const Layout: React.FC<Props> = ({ children }) => {
    return (
       <>
          <Header />
-         <FadeInUpTransition in>
-            <Container as="main">{children}</Container>
-         </FadeInUpTransition>
+         <Container as="main">
+            <FadeInUpTransition in>{children}</FadeInUpTransition>
+         </Container>
          <Footer />
       </>
    );

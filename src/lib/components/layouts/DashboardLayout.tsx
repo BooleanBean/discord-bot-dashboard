@@ -4,6 +4,7 @@ import "twin.macro";
 
 import DashboardSidebar from "#/lib/components/DashboardSidebar";
 import DashboardHeader from "#/lib/components/headers/DashboardHeader";
+import { Container } from "#/lib/components/StyledComponents";
 
 type Props = {
    children: React.ReactNode;
@@ -16,7 +17,10 @@ const DashboardLayout: React.FC<Props> = ({ children }) => {
 
          <div className="flex-1">
             <DashboardHeader />
-            <FadeInUpTransition in>{children}</FadeInUpTransition>
+
+            <Container as="main">
+               <FadeInUpTransition in>{children}</FadeInUpTransition>
+            </Container>
          </div>
       </div>
    );
