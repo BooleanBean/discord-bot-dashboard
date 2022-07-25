@@ -4,8 +4,8 @@
 
 /* TODO: move into tailwind.config */
 :root {
-   --background: theme("colors.black");
-   --background-secondary: theme("colors.gray.800");
+   --background: rgb(20 20 20);
+   --background-secondary: rgb(16 14 14);
    --primary: theme("colors.white");
    --primary-light: theme("colors.gray.100");
    --primary-medium: theme("colors.gray.200");

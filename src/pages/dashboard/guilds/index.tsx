@@ -18,7 +18,7 @@ const Guilds: NextPageWithLayout = () => {
          {guilds.map((guild) => (
             <div
                key={guild.id}
-               tw="p-8 bg-tw-secondary w-full h-56 rounded-lg border border-gray-800"
+               tw="p-8 bg-tw-background-secondary w-full h-56 rounded-lg border border-gray-800"
             >
                {guild.id}
                <ButtonLink href={`/dashboard/guilds/${guild.id}`}>Select</ButtonLink>

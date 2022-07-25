@@ -15,10 +15,10 @@ const DashboardLayout: React.FC<Props> = ({ children }) => {
       <div tw="flex h-full min-h-full">
          <DashboardSidebar />
 
-         <div className="flex-1">
+         <div className="flex-1 overflow-y-auto">
             <DashboardHeader />
 
-            <Container as="main">
+            <Container as="main" tw="bg-tw-background-secondary">
                <FadeInUpTransition in>{children}</FadeInUpTransition>
             </Container>
          </div>

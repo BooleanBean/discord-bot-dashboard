@@ -8,7 +8,7 @@ import FooterNavigation from "./FooterNavigation";
 
 export default function Footer() {
    return (
-      <footer tw="bg-tw-secondary">
+      <footer tw="bg-tw-background-secondary">
          <Container tw="py-16">
             <div tw="sm:flex sm:items-center sm:justify-between">
                <h3>Discord Bot</h3>
