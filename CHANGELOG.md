@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.11.0](https://github.com/BooleanBean/discord-bot-dashboard/compare/v1.10.0...v1.11.0) (2022-07-25)
+
+
+### Features
+
+* add github url to icon ([0fb5fff](https://github.com/BooleanBean/discord-bot-dashboard/commit/0fb5fffd8bb05d87529bd375a20693662717edc7))
+* **page:** add help center page ([f5acc5f](https://github.com/BooleanBean/discord-bot-dashboard/commit/f5acc5f65b98731eb074e300c4d473384dce171d))
+
+
+### Bug Fixes
+
+* something that I forgot ([e76328a](https://github.com/BooleanBean/discord-bot-dashboard/commit/e76328a92e8dfbefcebcf90e5b3dc476b4ecc7cf))
+
 ## [1.10.0](https://github.com/BooleanBean/discord-bot-dashboard/compare/v1.9.0...v1.10.0) (2022-07-25)
 
 
