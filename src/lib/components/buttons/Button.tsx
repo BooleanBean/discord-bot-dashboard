@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import { ImSpinner3 } from "react-icons/im";
 import twM from "twin.macro";
 

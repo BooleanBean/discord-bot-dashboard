@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import { FadeInUpTransition } from "react-transitions-library";
 
 import Footer from "#/lib/components/Footer";

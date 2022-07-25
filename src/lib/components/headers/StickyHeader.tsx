@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import "twin.macro";
 
 import ArrowLink from "#/lib/components/links/ArrowLink";

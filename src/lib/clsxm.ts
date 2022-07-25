@@ -1,7 +1,7 @@
 import clsx, { ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 
-/** Merge classes with tailwind-merge with clsx full feature */
+// TODO: refactor codes to twin.macro and remove clsx/clsxm from the project no need anymore
 export default function clsxm(...classes: ClassValue[]) {
    return twMerge(clsx(...classes));
 }

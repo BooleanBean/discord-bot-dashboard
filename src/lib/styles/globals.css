@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* TODO: move into tailwind.config */
 :root {
    --background: theme("colors.black");
    --background-secondary: theme("colors.gray.800");
@@ -66,7 +67,7 @@
          U+FFFD;
    }
 
-   /* #region  /**=========== Typography =========== */
+   /* TODO: move into tailwind.config */
    .h0 {
       @apply font-primary text-3xl font-bold md:text-5xl;
    }
@@ -95,13 +96,13 @@
    .p {
       @apply font-primary text-xs sm:text-sm md:text-base;
    }
-   /* #endregion  /**======== Typography =========== */
 
    .bg-dark a.custom-link {
       @apply border-gray-200 hover:border-gray-200/0;
    }
 }
 
+/* TODO: move into tailwind.config */
 @layer utilities {
    .bg-layers {
       -webkit-animation: filter-animation 4s infinite;

@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 
 import clsx from "#/lib/clsxm";
 import UnderlineLink from "#/lib/components/links/UnderlineLink";

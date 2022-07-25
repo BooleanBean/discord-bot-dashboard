@@ -1,5 +1,5 @@
 import { useTheme } from "next-themes";
-import React from "react";
+import * as React from "react";
 import "twin.macro";
 
 import AccentColorSelect from "#/lib/components/AccentColorSelect";
