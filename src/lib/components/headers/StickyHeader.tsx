@@ -1,9 +1,9 @@
 import * as React from "react";
 import "twin.macro";
 
-import ArrowLink from "#/lib/components/links/ArrowLink";
-import PrimaryLink from "#/lib/components/links/PrimaryLink";
-import { Container } from "#/lib/components/StyledComponents";
+import ArrowLink from "#components/links/ArrowLink";
+import PrimaryLink from "#components/links/PrimaryLink";
+import { Container } from "#components/StyledComponents";
 
 type Props = {
    title: string;

@@ -1,9 +1,9 @@
 import * as React from "react";
 import { FadeInUpTransition } from "react-transitions-library";
 
-import Footer from "#/lib/components/Footer";
-import Header from "#/lib/components/headers/Header";
-import { Container } from "#/lib/components/StyledComponents";
+import Footer from "#components/Footer";
+import Header from "#components/headers/Header";
+import { Container } from "#components/StyledComponents";
 
 type Props = {
    children: React.ReactNode;

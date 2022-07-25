@@ -1,7 +1,7 @@
 import * as React from "react";
 import "twin.macro";
 
-import { Container } from "#/lib/components/StyledComponents";
+import { Container } from "#components/StyledComponents";
 
 type Props = Record<string, unknown>;
 

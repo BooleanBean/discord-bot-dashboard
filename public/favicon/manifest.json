@@ -1,5 +1,11 @@
 {
-   "name": "Discord Bot Dashboard",
+   "name": "Discord Bot",
+   "description": "An open source discord bot dashboard with TailwindCSS & NextJS",
+   "start_url": "/?source=pwa",
+   "background_color": "#000",
+   "display": "standalone",
+   "scope": "/",
+   "theme_color": "#111",
    "icons": [
       {
          "src": "/android-icon-36x36.png",

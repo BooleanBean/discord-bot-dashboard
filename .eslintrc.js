@@ -18,12 +18,8 @@ module.exports = {
       "@typescript-eslint/explicit-module-boundary-types": "off",
 
       "react/display-name": "off",
-      "react/jsx-curly-brace-presence": [
-         "warn",
-         { props: "never", children: "never" },
-      ],
+      "react/jsx-curly-brace-presence": ["warn", { props: "never", children: "never" }],
 
-      //#region  //*=========== Unused Import ===========
       "@typescript-eslint/no-unused-vars": "off",
       "unused-imports/no-unused-imports": "warn",
       "unused-imports/no-unused-vars": [
@@ -35,9 +31,7 @@ module.exports = {
             argsIgnorePattern: "^_",
          },
       ],
-      //#endregion  //*======== Unused Import ===========
 
-      //#region  //*=========== Import Sort ===========
       "simple-import-sort/exports": "warn",
       "simple-import-sort/imports": [
          "warn",
@@ -52,7 +46,7 @@ module.exports = {
                // static data
                ["^#/data"],
                // components
-               ["^#/components", "^#/container"],
+               ["^#components", "^#/container"],
                // zustand store
                ["^#/store"],
                // Other imports
@@ -74,7 +68,6 @@ module.exports = {
             ],
          },
       ],
-      //#endregion  //*======== Import Sort ===========
    },
    globals: {
       React: true,

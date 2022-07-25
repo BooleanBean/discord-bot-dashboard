@@ -1,9 +1,9 @@
 import * as React from "react";
 import "twin.macro";
 
-import Layout from "#/lib/components/layouts/Layout";
-import ArrowLink from "#/lib/components/links/ArrowLink";
-import Seo from "#/lib/components/Seo";
+import Layout from "#components/layouts/Layout";
+import ArrowLink from "#components/links/ArrowLink";
+import Seo from "#components/Seo";
 
 import { NextPageWithLayout } from "#/global-types";
 

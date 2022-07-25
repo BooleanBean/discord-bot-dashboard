@@ -6,22 +6,19 @@ import nProgress from "nprogress";
 import React, { useEffect } from "react";
 import { QueryClientProvider } from "react-query";
 
-import "#/lib/styles/nprogress.css";
-import "#/lib/styles/globals.css";
-import "#/lib/styles/themes.css";
+import "#styles/nprogress.css";
+import "#styles/globals.css";
+import "#styles/themes.css";
 
-import Seo from "#/lib/components/Seo";
+import GlobalStyles from "#components/GlobalStyles";
+import Seo from "#components/Seo";
 
 import { NextPageWithLayout } from "#/global-types";
 import { queryClient } from "#/utils/query";
 
-import GlobalStyles from "../lib/components/GlobalStyles";
-
-// nProgress start
 Router.events.on("routeChangeStart", nProgress.start);
 Router.events.on("routeChangeError", nProgress.done);
 Router.events.on("routeChangeComplete", nProgress.done);
-// nProgress end
 
 type AppPropsWithLayout = AppProps & {
    Component: NextPageWithLayout;
@@ -45,7 +42,6 @@ export default function MyApp({
       });
 
       return () => clearTimeout(timeout);
-
       // eslint-disable-next-line react-hooks/exhaustive-deps
    }, []);
 

@@ -1,9 +1,9 @@
 import { BsDiscord, BsGithub, BsInstagram, BsTwitter } from "react-icons/bs";
 import "twin.macro";
 
-import UnderlineLink from "#/lib/components/links/UnderlineLink";
-import UnstyledLink from "#/lib/components/links/UnstyledLink";
-import { Container } from "#/lib/components/StyledComponents";
+import UnderlineLink from "#components/links/UnderlineLink";
+import UnstyledLink from "#components/links/UnstyledLink";
+import { Container } from "#components/StyledComponents";
 
 export default function Footer() {
    return (

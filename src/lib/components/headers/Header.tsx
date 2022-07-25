@@ -3,10 +3,10 @@ import React, { useEffect, useState } from "react";
 import { MdSpaceDashboard } from "react-icons/md";
 import "twin.macro";
 
-import Button from "#/lib/components/buttons/Button";
-import PrimaryLink from "#/lib/components/links/PrimaryLink";
-import UnstyledLink from "#/lib/components/links/UnstyledLink";
-import { Container } from "#/lib/components/StyledComponents";
+import Button from "#components/buttons/Button";
+import PrimaryLink from "#components/links/PrimaryLink";
+import UnstyledLink from "#components/links/UnstyledLink";
+import { Container } from "#components/StyledComponents";
 
 import { openInNewWindow } from "#/utils";
 

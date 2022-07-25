@@ -2,9 +2,9 @@ import { useTheme } from "next-themes";
 import * as React from "react";
 import "twin.macro";
 
-import AccentColorSelect from "#/lib/components/AccentColorSelect";
-import FixedLayout from "#/lib/components/layouts/FixedLayout";
-import Seo from "#/lib/components/Seo";
+import AccentColorSelect from "#components/AccentColorSelect";
+import FixedLayout from "#components/layouts/FixedLayout";
+import Seo from "#components/Seo";
 
 import { NextPageWithLayout } from "#/global-types";
 

@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { FadeInUpTransition } from "react-transitions-library";
 import "twin.macro";
 
-import StickyHeader from "#/lib/components/headers/StickyHeader";
-import { Container } from "#/lib/components/StyledComponents";
+import StickyHeader from "#components/headers/StickyHeader";
+import { Container } from "#components/StyledComponents";
 
 type Props = {
    children: React.ReactNode;

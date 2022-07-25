@@ -2,8 +2,8 @@ import * as React from "react";
 import { RiAlarmWarningFill } from "react-icons/ri";
 import "twin.macro";
 
-import ArrowLink from "#/lib/components/links/ArrowLink";
-import Seo from "#/lib/components/Seo";
+import ArrowLink from "#components/links/ArrowLink";
+import Seo from "#components/Seo";
 
 import { NextPageWithLayout } from "#/global-types";
 

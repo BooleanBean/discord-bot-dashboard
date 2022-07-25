@@ -1,13 +1,14 @@
-/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import NextAuth from "next-auth";
 import DiscordProvider from "next-auth/providers/discord";
+
+const { DISCORD_APP_ID, DISCORD_APP_SECRET, NEXTAUTH_SECRET } = process.env;
 
 export default NextAuth({
    providers: [
       DiscordProvider({
-         clientId: process.env.DISCORD_APP_ID!,
-         clientSecret: process.env.DISCORD_APP_SECRET!,
+         clientId: DISCORD_APP_ID ?? "",
+         clientSecret: DISCORD_APP_SECRET ?? "",
       }),
    ],
-   secret: process.env.NEXTAUTH_SECRET!,
+   secret: NEXTAUTH_SECRET ?? "",
 });

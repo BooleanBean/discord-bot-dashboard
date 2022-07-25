@@ -2,9 +2,9 @@ import * as React from "react";
 import { FadeInUpTransition } from "react-transitions-library";
 import "twin.macro";
 
-import DashboardSidebar from "#/lib/components/DashboardSidebar";
-import DashboardHeader from "#/lib/components/headers/DashboardHeader";
-import { Container } from "#/lib/components/StyledComponents";
+import DashboardSidebar from "#components/DashboardSidebar";
+import DashboardHeader from "#components/headers/DashboardHeader";
+import { Container } from "#components/StyledComponents";
 
 type Props = {
    children: React.ReactNode;

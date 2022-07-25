@@ -1,8 +1,8 @@
 import { ImSpinner3 } from "react-icons/im";
 import "twin.macro";
 
-import FixedLayout from "#/lib/components/layouts/FixedLayout";
-import ButtonLink from "#/lib/components/links/ButtonLink";
+import FixedLayout from "#components/layouts/FixedLayout";
+import ButtonLink from "#components/links/ButtonLink";
 
 import { NextPageWithLayout } from "#/global-types";
 import { useUserGuilds } from "#/utils/query";

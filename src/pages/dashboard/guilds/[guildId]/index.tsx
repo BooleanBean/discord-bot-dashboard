@@ -1,8 +1,8 @@
 import { useRouter } from "next/router";
 
-import DashboardLayout from "#/lib/components/layouts/DashboardLayout";
-import ArrowLink from "#/lib/components/links/ArrowLink";
-import Seo from "#/lib/components/Seo";
+import DashboardLayout from "#components/layouts/DashboardLayout";
+import ArrowLink from "#components/links/ArrowLink";
+import Seo from "#components/Seo";
 
 import { NextPageWithLayout } from "#/global-types";
 
