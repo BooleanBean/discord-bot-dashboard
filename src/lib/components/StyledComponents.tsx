@@ -1,5 +1,4 @@
-import styled from "styled-components";
-import twM from "twin.macro";
+import twM, { styled } from "twin.macro";
 
 export type ContainerProps = {
    centered?: boolean;
