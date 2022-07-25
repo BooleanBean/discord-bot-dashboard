@@ -12,16 +12,19 @@ export default function SignIn({ provider }: Props) {
    const { status } = useSession();
 
    useEffect(() => {
+      let timeout: NodeJS.Timeout;
+
       if (status === "authenticated") {
          window.localStorage.removeItem("redirect");
          window.localStorage.setItem("redirect", "/dashboard/guilds");
-         setTimeout(() => {
+         timeout = setTimeout(() => {
             window.close();
          }, 1 * 1000);
          return;
       }
 
-      setTimeout(() => signIn(provider.id), 2 * 1000);
+      timeout = setTimeout(() => signIn(provider.id), 2 * 1000);
+      return () => clearTimeout(timeout);
       // eslint-disable-next-line react-hooks/exhaustive-deps
    }, [status]);
 

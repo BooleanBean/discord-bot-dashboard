@@ -35,12 +35,17 @@ export default function MyApp({
    const getLayout = Component.getLayout ?? ((page: React.ReactElement) => page);
 
    useEffect(() => {
+      let timeout: NodeJS.Timeout;
+
       window.addEventListener("storage", (e: StorageEvent) => {
          if (e.key === "redirect" && e.newValue) {
-            setTimeout(() => router.push(e.newValue as string), 1 * 1000);
+            timeout = setTimeout(() => router.push(e.newValue as string), 1 * 1000);
             localStorage.removeItem("redirect");
          }
       });
+
+      return () => clearTimeout(timeout);
+
       // eslint-disable-next-line react-hooks/exhaustive-deps
    }, []);
 
