@@ -1,7 +1,8 @@
 import * as React from "react";
 import { FadeInUpTransition } from "react-transitions-library";
 
-import Footer from "#components/Footer";
+import Footer from "#/lib/components/footer";
+
 import Header from "#components/headers/Header";
 import { Container } from "#components/StyledComponents";
 
