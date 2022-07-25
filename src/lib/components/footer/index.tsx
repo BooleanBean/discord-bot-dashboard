@@ -50,7 +50,7 @@ export default function Footer() {
                <FooterNavigation
                   category="Helpfull Links"
                   items={[
-                     { href: "/support-center", children: "Support Center" },
+                     { href: "/help-center", children: "Help Center" },
                      { href: "/faqs", children: "FAQs" },
                      { href: "/history", children: "History" },
                   ]}

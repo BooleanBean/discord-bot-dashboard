@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { FadeInUpTransition } from "react-transitions-library";
-import "twin.macro";
+import tw from "twin.macro";
 
 import StickyHeader from "#components/headers/StickyHeader";
 import { Container } from "#components/StyledComponents";
@@ -8,9 +8,10 @@ import { Container } from "#components/StyledComponents";
 type Props = {
    children: React.ReactNode;
    title: string;
+   isTitleCentered?: boolean;
 };
 
-const FixedLayout: React.FC<Props> = ({ children, title }) => {
+const FixedLayout: React.FC<Props> = ({ children, title, isTitleCentered }) => {
    const [opacity, setOpacity] = useState<number>(0);
 
    useEffect(() => {
@@ -37,12 +38,15 @@ const FixedLayout: React.FC<Props> = ({ children, title }) => {
          <Container tw="pb-8">
             <h1
                style={{ opacity: opacity === 0 ? 1 : 1 - opacity }}
-               tw="mt-10 transition duration-200"
+               css={[
+                  tw`mt-10 transition duration-200`,
+                  isTitleCentered && tw`text-center`,
+               ]}
             >
                {title}
             </h1>
 
-            <hr tw="border-tw-border my-10" />
+            {!isTitleCentered && <hr tw="border-tw-border my-10" />}
             <FadeInUpTransition in>{children}</FadeInUpTransition>
          </Container>
       </>

@@ -7,7 +7,7 @@
    --background: rgb(20 20 20);
    --background-secondary: rgb(16 14 14);
    --primary: theme("colors.white");
-   --primary-light: theme("colors.gray.100");
+   --primary-light: #e4e4e4;
    --primary-medium: #c5c9ce;
    --primary-dark: #b1abb4;
    --secondary: theme("colors.black");

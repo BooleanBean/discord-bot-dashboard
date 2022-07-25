@@ -16,8 +16,8 @@ const Home: NextPageWithLayout = () => {
          <section id="hero">
             <div tw="py-10 flex min-h-screen flex-col items-center justify-center text-center">
                <h1 tw="text-transparent bg-clip-text bg-gradient-to-r from-green-300 via-primary-500 to-purple-600">
-                  Simple, Cool & Customiziable
-                  <span tw="sm:block">Discord Bot.</span>
+                  Simple, Cool & Customiziable <br />
+                  Discord Bot.
                </h1>
 
                <p tw="mt-2 text-tw-primary-medium text-lg">
