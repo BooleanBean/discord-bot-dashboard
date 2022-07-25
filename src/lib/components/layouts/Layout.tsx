@@ -1,5 +1,4 @@
 import * as React from "react";
-import { FadeInUpTransition } from "react-transitions-library";
 
 import Footer from "#/lib/components/footer";
 
@@ -14,9 +13,7 @@ const Layout: React.FC<Props> = ({ children }) => {
    return (
       <>
          <Header />
-         <Container as="main">
-            <FadeInUpTransition in>{children}</FadeInUpTransition>
-         </Container>
+         <Container as="main">{children}</Container>
          <Footer />
       </>
    );

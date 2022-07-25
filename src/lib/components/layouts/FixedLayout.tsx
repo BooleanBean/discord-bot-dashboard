@@ -32,10 +32,9 @@ const FixedLayout: React.FC<Props> = ({ children, title, isTitleCentered }) => {
 
    return (
       <>
-         {/* TODO: fix: position stops working when scrolled half of the page */}
          <StickyHeader titleOpacity={opacity} title={title} />
 
-         <Container tw="pb-8">
+         <Container tw="pb-8 h-full">
             <h1
                style={{ opacity: opacity === 0 ? 1 : 1 - opacity }}
                css={[
